@@ -36,7 +36,7 @@ const productionCoRouter = express.Router()
 productionCoRouter.get("/", function (req, res) {
   productionApi.getAllProductionCo()
     .then((allProductions) => {
-      res.render("allCompany", { allProductions })
+      res.render("companies/allCompany", { allProductions })
     })
     .catch((error) => {
       console.log(error) //will show error in console
@@ -46,8 +46,8 @@ productionCoRouter.get("/", function (req, res) {
 // get one company by productionId
 productionCoRouter.get("/:productionId", function (req, res) {
   productionApi.getOneProductionCo(productionId)
-    .then((oneProduction) => {
-      res.render("companies/oneCompany", { _id: productionId, oneProduction })
+    .then((productionCoFromDb) => {
+      res.render("companies/oneCompany", { _id: productionId, productionCoFromDb })
     })
     .catch((error) => {
       console.log(error) //will show error in console
@@ -69,7 +69,7 @@ productionCoRouter.get("/new", function (req, res) {
 productionCoRouter.get("/add", function (req, res) {
   productionApi.addProductionCo(req.params.productionId)
   .then(() => {
-    res.render("companies/createCompanies")
+    res.render("companies/createCompanies", {})
   })
   .catch((error) => {
     console.log(error) //will show error in console
