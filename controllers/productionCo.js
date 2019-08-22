@@ -45,16 +45,16 @@ productionCoRouter.get("/", function (req, res) {
 
 // get one company by productionId
 productionCoRouter.get("/:productionId", function (req, res) {
-  productionApi.getOneProductionCo(req.params.productionId)
+  productionApi.getOneProductionCo(productionId)
     .then((oneProduction) => {
-      res.render("companies/oneCompany", {oneProduction})
+      res.render("companies/oneCompany", { _id: productionId, oneProduction })
     })
     .catch((error) => {
       console.log(error) //will show error in console
     })
 })
 
-// create new company, send request for createForm
+// create new company
 productionCoRouter.get("/new", function (req, res) {
   productionApi.addProductionCo(req.params.productionId)
     .then((getProductionCo) => {
@@ -62,14 +62,6 @@ productionCoRouter.get("/new", function (req, res) {
     })
     .catch((error) => {
       console.log(error) //will show error in console
-    })
-})
-
-// render createForm
-productionCoRouter.get("/add", function (req, res) {
-  productionApi.addProductionCo(req.params.productionId)
-    .then(() => {
-      res.render("companies/createCompany", {})
     })
 })
 

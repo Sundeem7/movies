@@ -26,7 +26,7 @@ const mongoose = require('mongoose');
 //   console.log("Mongoose has connected to MongoDB!");
 // });
 
-const connectionString = process.env.MONGODB_URI || "mongodb://localhost/<db-name>";
+const connectionString = process.env.MONGODB_URI || "mongodb://localhost/movies";
 
 
 /* Step 2
