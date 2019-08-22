@@ -18,7 +18,7 @@ const mongoose = require('./connection.js')
  * your data once you stop running your server.
  *
  */
-// global.seriesModel = [];
+// global.productionModel = [];
 
 /* Step 2
  *
@@ -26,11 +26,10 @@ const mongoose = require('./connection.js')
  * NOTE: skip this if you are not using mongoose
  *
  */
-const seriesSchema = mongoose.Schema({
-  franchiseName: String,
-  numberOfMovies: Number,
-  totalRevenue: Number,
-  totalBudget: Number
+const movieSchema = mongoose.Schema({
+  name: String,
+  revenue: Number,
+  amusementPark: Boolean
 })
 
 /* Step 3
@@ -39,7 +38,7 @@ const seriesSchema = mongoose.Schema({
  * NOTE: skip this if you are not using mongoose
  *
  */
-const seriesCollection = mongoose.model('series', seriesSchema)
+const productionCoCollection = mongoose.model('productionCo', movieSchema)
 
 /* Step 4
  *
@@ -47,27 +46,27 @@ const seriesCollection = mongoose.model('series', seriesSchema)
  *
  */
 // READ/ get
-const getAllSeries = () => {
-  return seriesCollection.find();
+const getAllProductionCo = () => {
+  return productionCoCollection.find();
 }
 
-const getOneSeries = (seriesId) => {
-  return seriesCollection.findById(seriesId)
+const getOneProductionCo = (productionId) => {
+  return productionCoCollection.findById(productionId)
 }
 
 // CREATE/ post
-const addSeries = (newSeries) => {
-  return seriesCollection.create(newSeries)
+const addProductionCo = (newProduction) => {
+  return productionCoCollection.create(newProduction)
 }
 
 // UPDATE/ edit
-const updateSeries = (seriesId, updatedSeries) => {
-  return seriesCollection.updateOne({_id: seriesId}, updatedSeries)
+const updateProductionCo = (productionId, updatedProduction) => {
+  return productionCoCollection.updateOne({_id: productionId}, updatedProduction)
 }
 
 // DELETE
-const deleteSeries = (seriesId) => {
-  return seriesCollection.findByIdAndDelete(seriesId)
+const deleteProductionCo = (productionId) => {
+  return productionCoCollection.findByIdAndDelete(productionId)
 }
 
 /* Step 5
@@ -76,9 +75,9 @@ const deleteSeries = (seriesId) => {
  * object
  */
 module.exports = {
-  addSeries,
-  deleteSeries,
-  getAllSeries,
-  getOneSeries,
-  updateSeries
+  addProductionCo,
+  deleteProductionCo,
+  getAllProductionCo,
+  getOneProductionCo,
+  updateProductionCo
 }
