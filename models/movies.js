@@ -29,8 +29,7 @@ const mongoose = require('./connection.js')
 const movieSchema = mongoose.Schema({
   nameOfMovie: String,
   numberInFranchise: Number,
-  totalRevenue: Number,
-  releaseDate: Number
+  releaseDate: Date
 })
 
 /* Step 3

@@ -1,19 +1,19 @@
 <div>
-    <form action="/{{productionCoFromDb._id}}?_method=DELETE" method="POST">
+    <form action="/{{moviesFromDb._id}}?_method=DELETE" method="POST">
     <input type="submit" value="Delete Issue"/>
     </form>
-    <form action="/{{productionCoFromDb._id}}?_method=PUT" method="POST">
+    <form action="/{{moviesFromDb._id}}?_method=PUT" method="POST">
     
-    <input type="submit" value="Edit Issue" />
+    <input type="submit" value="Edit Movie" />
 
-    <label for="name">Production Company Name</label>
-    <input type="text" name="name" value="{{productionCoFromDb.name}}"/>
+    <label for="nameOfMovie">Movie Title</label>
+    <input type="text" name="nameOfMovie" value="{{moviesFromDb.nameOfMovie}}"/>
 
-    <label for="revenue">Revenue</label>
-    <input type="number" name="revenue" value="{{productionCoFromDb.revenue}}"/>
+    <label for="numberInFranchise">Number in Franchise</label>
+    <input type="number" name="numberInFranchise" value="{{moviesFromDb.numberInFranchise}}"/>
 
-    <label for="amusementPark">Amusement Park</label>
-    <input type="checkbox"  name="amusementPark" value="{{productionCoFromDb.amusementPark}}"/>
+    <label for="releaseDate">Release Date</label>
+    <input type="checkbox"  name="releaseDate" value="{{moviesFromDb.releaseDate}}"/>
 
     </form>
 </div>

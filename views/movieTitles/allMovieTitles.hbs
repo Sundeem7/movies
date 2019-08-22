@@ -1,13 +1,13 @@
-<h1>All Production Companies</h1>
+<h1>All Movie Titles</h1>
 
-<a href="/add">New Production Company</a>
+<a href="/add">New Movie Title</a>
 
 <ul>
     {{!-- this will create an li for EACH item --}}
-    {{#each allProductions}}
+    {{#each allMovies}}
     <li>
         {{!-- print out name of production company you are looking for  --}}
-        <a href="/{{_id}}">{{name}}</a>  
+        <a href="/{{_id}}">{{nameOfMovie}}</a>  
 
     </li>
     {{/each}}

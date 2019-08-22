@@ -67,7 +67,7 @@ moviesRouter.get("/add", function (req, res) {
 moviesRouter.get("/:moviesId", function (req, res) {
   moviesApi.getOneMovie(req.params.moviesId)
     .then((moviesFromDb) => {
-      res.render("movieTitles/oneMovieTitle", { _id: req.params.moviesId, moviesFromDb })
+      res.render("movieTitles/oneMovieTitle", {_id: req.params.moviesId, moviesFromDb})
     })
     .catch((error) => {
       console.log(error) //will show error in console
