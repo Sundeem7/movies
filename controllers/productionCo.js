@@ -71,6 +71,39 @@ productionCoRouter.get("/add", function (req, res) {
   .then(() => {
     res.render("companies/createCompanies")
   })
+  .catch((error) => {
+    console.log(error) //will show error in console
+  })
+})
+
+productionCoRouter.post("/", function (req, res) {
+  productionApi.addProductionCo(req.body)
+  .then(() => {
+    res.redirect("/")
+  })
+  .catch((error) => {
+    console.log(error) //will show error in console
+  })
+})
+
+productionCoRouter.put("/:productionId", function (req, res) {
+  productionApi.updateProductionCo(req.params.productionId, req.body)
+  .then(() => {
+    res.redirect("/")
+  })
+  .catch((error) => {
+    console.log(error) //will show error in console
+  })
+})
+
+productionCoRouter.delete("/:productionId", function (req, res) {
+  productionApi.deleteProductionCo(req.params.productionId)
+  .then(() => {
+    res.redirect("/") //redirects to "/", can use any url, etc.
+  })
+  .catch((error) => {
+    console.log(error) //will show error in console
+  })
 })
 
 /* Step 6
