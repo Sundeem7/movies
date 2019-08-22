@@ -7,7 +7,7 @@
     "express": "^4.17.1",
     "hbs": "^4.0.4",
     "method-override": "^3.0.0",
-    "mongoose": "^5.6.1"
+    "mongoose": "^5.6.10"
   },
   "devDependencies": {},
   "scripts": {
@@ -15,5 +15,13 @@
     "start": "node server.js"
   },
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Sundeem7/introvertOasis.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Sundeem7/introvertOasis/issues"
+  },
+  "homepage": "https://github.com/Sundeem7/introvertOasis#readme"
 }

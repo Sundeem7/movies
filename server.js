@@ -17,7 +17,7 @@ const methodOverride = require('method-override')
  * import routers from controllers/
  *
  */
-const { templateRouter } = require('./controllers/template.js')
+const { productionCoRouter } = require('./controllers/productionCo.js')
 
 
 /* Step 3
@@ -61,7 +61,7 @@ app.set('view engine', 'hbs')
  * add router for the application to use. The first argument is a prefix to all
  * the paths defined in the router.
  */
-app.use('/helloworld', templateRouter)
+app.use('/movies', productionCoRouter)
 
 /* Step 5
  *
@@ -69,7 +69,7 @@ app.use('/helloworld', templateRouter)
  *
  * NOTE: keep these lines at the bottom of the file 
  */
-const PORT = process.env.PORT || 3000 
+const PORT = process.env.PORT || 3001
 
 /* Step 6
  *
