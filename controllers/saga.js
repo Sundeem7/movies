@@ -8,14 +8,14 @@ const express = require('express')
  * Import the api files from the models
  *
  * TODO: change the file path to the models file you'll need to use.
- * TODO: rename this from `productionApi` to something more sensible (e.g:
+ * TODO: rename this from `sagaApi` to something more sensible (e.g:
  * `shopsAPI`)
  *
  * NOTE: You may need to import more than one API to create the 
  * controller you need.
  * 
  */
-const productionApi = require('../models/productionCo.js')
+const sagaApi = require('../models/saga.js')
 
 /* Step 3 
  * 
@@ -25,7 +25,7 @@ const productionApi = require('../models/productionCo.js')
  * TODO: rename this from templateRouter to something that makes sense. (e.g:
  * `shopRouter`)
  */
-const productionCoRouter = express.Router()
+const sagaRouter = express.Router()
 
 /* Step 4
  * 
@@ -33,8 +33,8 @@ const productionCoRouter = express.Router()
  */
 
 // get all companies
-productionCoRouter.get("/", function (req, res) {
-  productionApi.getAllProductionCo()
+sagaRouter.get("/", function (req, res) {
+  sagaApi.getAllProductionCo()
     .then((allProductions) => {
       res.render("companies/allCompany", { allProductions })
     })
@@ -43,11 +43,20 @@ productionCoRouter.get("/", function (req, res) {
     })
 })
 
-
+// get one company by productionId
+sagaRouter.get("/:productionId", function (req, res) {
+  sagaApi.getOneProductionCo(productionId)
+    .then((productionCoFromDb) => {
+      res.render("companies/oneCompany", { _id: productionId, productionCoFromDb })
+    })
+    .catch((error) => {
+      console.log(error) //will show error in console
+    })
+})
 
 // create new company
-productionCoRouter.get("/new", function (req, res) {
-  productionApi.addProductionCo(req.params.productionId)
+sagaRouter.get("/new", function (req, res) {
+  sagaApi.addProductionCo(req.params.productionId)
     .then((getProductionCo) => {
       res.send({ getProductionCo })
     })
@@ -57,25 +66,18 @@ productionCoRouter.get("/new", function (req, res) {
 })
 
 // render createForm
-productionCoRouter.get("/add", function (req, res) {
- 
+sagaRouter.get("/add", function (req, res) {
+  sagaApi.addProductionCo(req.params.productionId)
+  .then(() => {
     res.render("companies/createCompanies", {})
-
+  })
+  .catch((error) => {
+    console.log(error) //will show error in console
+  })
 })
 
-// get one company by productionId
-productionCoRouter.get("/:productionId", function (req, res) {
-  productionApi.getOneProductionCo(req.params.productionId)
-    .then((productionCoFromDb) => {
-      res.render("companies/oneCompany", { _id: req.params.productionId, productionCoFromDb })
-    })
-    .catch((error) => {
-      console.log(error) //will show error in console
-    })
-})
-
-productionCoRouter.post("/", function (req, res) {
-  productionApi.addProductionCo(req.body)
+sagaRouter.post("/", function (req, res) {
+  sagaApi.addProductionCo(req.body)
   .then(() => {
     res.redirect("/")
   })
@@ -84,9 +86,8 @@ productionCoRouter.post("/", function (req, res) {
   })
 })
 
-productionCoRouter.put("/:productionId", function (req, res) {
-  console.log('productionCoRouter - PUT - req.body', req.body)
-  productionApi.updateProductionCo(req.params.productionId, req.body)
+sagaRouter.put("/:productionId", function (req, res) {
+  sagaApi.updateProductionCo(req.params.productionId, req.body)
   .then(() => {
     res.redirect("/")
   })
@@ -95,8 +96,8 @@ productionCoRouter.put("/:productionId", function (req, res) {
   })
 })
 
-productionCoRouter.delete("/:productionId", function (req, res) {
-  productionApi.deleteProductionCo(req.params.productionId)
+sagaRouter.delete("/:productionId", function (req, res) {
+  sagaApi.deleteProductionCo(req.params.productionId)
   .then(() => {
     res.redirect("/") //redirects to "/", can use any url, etc.
   })
@@ -111,5 +112,5 @@ productionCoRouter.delete("/:productionId", function (req, res) {
  *
  */
 module.exports = {
-  productionCoRouter
+  sagaRouter
 }

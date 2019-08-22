@@ -61,7 +61,7 @@ const addProductionCo = (newProduction) => {
 
 // UPDATE/ edit
 const updateProductionCo = (productionId, updatedProduction) => {
-  return productionCoCollection.updateOne({_id: productionId, updatedProduction})
+  return productionCoCollection.updateOne({_id: productionId}, updatedProduction)
 }
 
 // DELETE
