@@ -18,7 +18,7 @@ const mongoose = require('./connection.js')
  * your data once you stop running your server.
  *
  */
-// global.SagaModel = [];
+// global.seriesModel = [];
 
 /* Step 2
  *
@@ -26,7 +26,7 @@ const mongoose = require('./connection.js')
  * NOTE: skip this if you are not using mongoose
  *
  */
-const sagaSchema = mongoose.Schema({
+const seriesSchema = mongoose.Schema({
   franchiseName: String,
   numberInFranchise: Number,
   totalRevenue: Number,
@@ -39,7 +39,7 @@ const sagaSchema = mongoose.Schema({
  * NOTE: skip this if you are not using mongoose
  *
  */
-const sagaCollection = mongoose.model('sagas', sagaSchema)
+const seriesCollection = mongoose.model('series', seriesSchema)
 
 /* Step 4
  *
@@ -47,27 +47,27 @@ const sagaCollection = mongoose.model('sagas', sagaSchema)
  *
  */
 // READ/ get
-const getAllSaga = () => {
-  return sagaCollection.find();
+const getAllSeries = () => {
+  return seriesCollection.find();
 }
 
-const getOneSaga = (sagaId) => {
-  return sagaCollection.findById(sagaId)
+const getOneSeries = (seriesId) => {
+  return seriesCollection.findById(seriesId)
 }
 
 // CREATE/ post
-const addSaga = (newSaga) => {
-  return sagaCollection.create(newSaga)
+const addSeries = (newSeries) => {
+  return seriesCollection.create(newSeries)
 }
 
 // UPDATE/ edit
-const updateSaga = (sagaId, updatedSaga) => {
-  return sagaCollection.updateOne({_id: sagaId, updatedSaga})
+const updateSaga = (seriesId, updatedSeries) => {
+  return seriesCollection.updateOne({_id: seriesId}, updatedSeries)
 }
 
 // DELETE
-const deleteSaga = (sagaId) => {
-  return sagaCollection.findByIdAndDelete(sagaId)
+const deleteSeries = (seriesId) => {
+  return seriesCollection.findByIdAndDelete(seriesId)
 }
 
 /* Step 5
@@ -76,9 +76,9 @@ const deleteSaga = (sagaId) => {
  * object
  */
 module.exports = {
-  addSaga,
-  deleteSaga,
-  getAllSaga,
-  getOneSaga,
-  updateSaga
+  addSeries,
+  deleteSeries,
+  getAllSeries,
+  getOneSeries,
+  updateSeries
 }
