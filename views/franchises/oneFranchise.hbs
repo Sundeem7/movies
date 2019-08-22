@@ -6,14 +6,17 @@
     
     <input type="submit" value="Edit Issue" />
 
-    <label for="name">Production Company Name</label>
-    <input type="text" name="name" value="{{productionCoFromDb.name}}"/>
+    <label for="franchiseName">Franchise Name</label>
+    <input type="text" name="franchiseName" value="{{seriesFromDb.franchiseName}}"/>
 
-    <label for="revenue">Revenue</label>
-    <input type="number" name="revenue" value="{{productionCoFromDb.revenue}}"/>
+    <label for="numberInFranchise">Number In Franchise</label>
+    <input type="number"  name="numberInFranchise" value="{{seriesFromDb.numberInFranchise}}"/>
 
-    <label for="amusementPark">Amusement Park</label>
-    <input type="checkbox"  name="amusementPark" value="{{productionCoFromDb.amusementPark}}"/>
+    <label for="totalRevenue">Total Revenue</label>
+    <input type="number"  name="totalRevenue" value="{{seriesFromDb.totalRevenue}}"/>
+
+    <label for="totalBudget">Total Budget</label>
+    <input type="number"  name="totalBudget" value="{{seriesFromDb.totalBudget}}"/>
 
     </form>
 </div>

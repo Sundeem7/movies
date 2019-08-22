@@ -64,8 +64,8 @@ seriesRouter.get("/add", function (req, res) {
 // get one company by seriesId
 seriesRouter.get("/:seriesId", function (req, res) {
   seriesApi.getOneSeries(req.params.seriesId)
-    .then((SeriesFromDb) => {
-      res.render("franchises/oneFranchise", {_id: req.params.seriesId, SeriesFromDb})
+    .then((seriesFromDb) => {
+      res.render("franchises/oneFranchise", {_id: req.params.seriesId, seriesFromDb})
     })
     .catch((error) => {
       console.log(error) //will show error in console

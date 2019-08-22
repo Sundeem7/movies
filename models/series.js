@@ -61,7 +61,7 @@ const addSeries = (newSeries) => {
 }
 
 // UPDATE/ edit
-const updateSaga = (seriesId, updatedSeries) => {
+const updateSeries = (seriesId, updatedSeries) => {
   return seriesCollection.updateOne({_id: seriesId}, updatedSeries)
 }
 
