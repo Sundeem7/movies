@@ -65,6 +65,13 @@ productionCoRouter.get("/new", function (req, res) {
     })
 })
 
+// render createForm
+productionCoRouter.get("/add", function (req, res) {
+  productionApi.addProductionCo(req.params.productionId)
+  .then(() => {
+    res.render("companies/createCompanies")
+  })
+})
 
 /* Step 6
  *
