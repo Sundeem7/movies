@@ -26,11 +26,14 @@ const mongoose = require('./connection.js')
  * NOTE: skip this if you are not using mongoose
  *
  */
+
 const productionCoSchema = mongoose.Schema({
   name: String,
   revenue: Number,
-  amusementPark: Boolean
+  amusementPark: Boolean,
 })
+
+
 
 /* Step 3
  *
@@ -39,6 +42,7 @@ const productionCoSchema = mongoose.Schema({
  *
  */
 const productionCoCollection = mongoose.model('productionCo', productionCoSchema)
+
 
 /* Step 4
  *
@@ -68,6 +72,8 @@ const updateProductionCo = (productionId, updatedProduction) => {
 const deleteProductionCo = (productionId) => {
   return productionCoCollection.findByIdAndDelete(productionId)
 }
+
+
 
 /* Step 5
  *

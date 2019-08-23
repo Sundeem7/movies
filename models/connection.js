@@ -26,7 +26,7 @@ const mongoose = require('mongoose');
 //   console.log("Mongoose has connected to MongoDB!");
 // });
 
-const connectionString = process.env.MONGODB_URI || "mongodb://localhost/movies";
+const connectionString = process.env.MONGODB_URI || "mongodb://localhost/favoriteSagas";
 
 
 /* Step 2
@@ -35,7 +35,7 @@ const connectionString = process.env.MONGODB_URI || "mongodb://localhost/movies"
  *
  * NOTE: newUrlParser diables a deprecation warning
  */
-mongoose.connect(connectionString, { useNewUrlParser: true})
+mongoose.connect(connectionString, {useNewUrlParser: true})
   .then(() => {
     console.log("connected to mongo at: " + connectionString);
   });

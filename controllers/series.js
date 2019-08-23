@@ -35,8 +35,8 @@ const seriesRouter = express.Router()
 // get all franchises
 seriesRouter.get("/", function (req, res) {
   seriesApi.getAllSeries()
-    .then((allProductions) => {
-      res.render("franchises/allFranchises", { allProductions })
+    .then((allSeries) => {
+      res.render("franchises/allFranchises", {allSeries})
     })
     .catch((error) => {
       console.log(error) //will show error in console
@@ -49,7 +49,7 @@ seriesRouter.get("/", function (req, res) {
 seriesRouter.get("/new", function (req, res) {
   seriesApi.addSeries(req.params.seriesId)
     .then((getSeries) => {
-      res.send({ getSeries })
+      res.send({getSeries})
     })
     .catch((error) => {
       console.log(error) //will show error in console
@@ -83,7 +83,6 @@ seriesRouter.post("/", function (req, res) {
 })
 
 seriesRouter.put("/:seriesId", function (req, res) {
-  console.log('seriesRouter - PUT - req.body', req.body)
   seriesApi.updateSeries(req.params.seriesId, req.body)
   .then(() => {
     res.redirect("/")

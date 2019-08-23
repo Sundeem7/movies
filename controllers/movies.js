@@ -36,7 +36,7 @@ const moviesRouter = express.Router()
 moviesRouter.get("/", function (req, res) {
   moviesApi.getAllMovie()
     .then((allMovies) => {
-      res.render("movieTitles/allCompany", { allMovies })
+      res.render("movieTitles/allMovieTitles", {allMovies})
     })
     .catch((error) => {
       console.log(error) //will show error in console
@@ -49,7 +49,7 @@ moviesRouter.get("/", function (req, res) {
 moviesRouter.get("/new", function (req, res) {
   moviesApi.addMovie(req.params.moviesId)
     .then((getMovie) => {
-      res.send({ getMovie })
+      res.send({getMovie})
     })
     .catch((error) => {
       console.log(error) //will show error in console
@@ -57,10 +57,8 @@ moviesRouter.get("/new", function (req, res) {
 })
 
 // render createForm
-moviesRouter.get("/add", function (req, res) {
- 
+moviesRouter.get("/add", function (req, res) { 
     res.render("movieTitles/createMovieTitles", {})
-
 })
 
 // get one company by moviesId
@@ -85,7 +83,6 @@ moviesRouter.post("/", function (req, res) {
 })
 
 moviesRouter.put("/:moviesId", function (req, res) {
-  console.log('moviesRouter - PUT - req.body', req.body)
   moviesApi.updateMovie(req.params.moviesId, req.body)
   .then(() => {
     res.redirect("/")
