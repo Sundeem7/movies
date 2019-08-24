@@ -30,7 +30,14 @@ const seriesSchema = mongoose.Schema({
   franchiseName: String,
   numberOfMovies: Number,
   totalRevenue: Number,
-  totalBudget: Number
+  totalBudget: Number,
+
+  movies: [
+    {
+      type: Schema.Types.ObjectId, //calls the specific object type
+      ref: "movies" //referencing file series
+    }
+  ]
 })
 
 /* Step 3
