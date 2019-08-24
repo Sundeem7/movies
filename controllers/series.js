@@ -33,7 +33,7 @@ const seriesRouter = express.Router()
  */
 
 // get all franchises
-seriesRouter.get("/", function (req, res) {
+seriesRouter.get("productionCo/:productionCoId/series", function (req, res) {
   seriesApi.getAllSeries()
     .then((allSeries) => {
       res.render("franchises/allFranchises", {allSeries})
@@ -46,7 +46,7 @@ seriesRouter.get("/", function (req, res) {
 
 
 // create new company
-seriesRouter.get("/new", function (req, res) {
+seriesRouter.get("productionCo/:productionCoId/new", function (req, res) {
   seriesApi.addSeries(req.params.seriesId)
     .then((getSeries) => {
       res.send({getSeries})
@@ -57,12 +57,12 @@ seriesRouter.get("/new", function (req, res) {
 })
 
 // render createForm
-seriesRouter.get("/add", function (req, res) {
+seriesRouter.get("productionCo/:productionCoId/add", function (req, res) {
     res.render("franchises/createFranchises", {})
 })
 
 // get one company by seriesId
-seriesRouter.get("/:seriesId", function (req, res) {
+seriesRouter.get("productionCo/:productionCoId/:seriesId", function (req, res) {
   seriesApi.getOneSeries(req.params.seriesId)
     .then((seriesFromDb) => {
       res.render("franchises/oneFranchise", {_id: req.params.seriesId, seriesFromDb})
@@ -72,7 +72,7 @@ seriesRouter.get("/:seriesId", function (req, res) {
     })
 })
 
-seriesRouter.post("/", function (req, res) {
+seriesRouter.post("productionCo/:productionCoId/series", function (req, res) {
   seriesApi.addSeries(req.body)
   .then(() => {
     res.redirect("/")
@@ -82,7 +82,7 @@ seriesRouter.post("/", function (req, res) {
   })
 })
 
-seriesRouter.put("/:seriesId", function (req, res) {
+seriesRouter.put("productionCo/:productionCoId/:seriesId", function (req, res) {
   seriesApi.updateSeries(req.params.seriesId, req.body)
   .then(() => {
     res.redirect("/")
@@ -92,7 +92,7 @@ seriesRouter.put("/:seriesId", function (req, res) {
   })
 })
 
-seriesRouter.delete("/:seriesId", function (req, res) {
+seriesRouter.delete("productionCo/:productionCoId/:seriesId", function (req, res) {
   seriesApi.deleteSeries(req.params.seriesId)
   .then(() => {
     res.redirect("/") //redirects to "/", can use any url, etc.
