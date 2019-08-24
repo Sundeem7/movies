@@ -46,7 +46,7 @@ moviesRouter.get(":productionId/series/:seriedId/movies", function (req, res) {
 
 
 // create new company
-moviesRouter.get(":productionId/series/:seriedId/movies/new", function (req, res) {
+moviesRouter.get("/:productionId/series/:seriedId/moviesnew", function (req, res) {
   moviesApi.addMovie(req.params.moviesId)
     .then((getMovie) => {
       res.send({getMovie})
@@ -57,7 +57,7 @@ moviesRouter.get(":productionId/series/:seriedId/movies/new", function (req, res
 })
 
 // render createForm
-moviesRouter.get(":productionId/series/:seriedId/movies/add", function (req, res) { 
+moviesRouter.get("/:productionId/series/:seriedId/moviesadd", function (req, res) { 
     res.render("movieTitles/createMovieTitles", {
     })
     .catch((error) => {
@@ -66,7 +66,7 @@ moviesRouter.get(":productionId/series/:seriedId/movies/add", function (req, res
 })
 
 // get one company by moviesId
-moviesRouter.get(":productionId/series/:seriedId/movies/:moviesId", function (req, res) {
+moviesRouter.get("/:productionId/series/:seriedId/movies:moviesId", function (req, res) {
   moviesApi.getOneMovie(req.params.moviesId)
     .then((moviesFromDb) => {
       res.render("movieTitles/oneMovieTitle", {_id: req.params.moviesId, moviesFromDb})
@@ -76,30 +76,30 @@ moviesRouter.get(":productionId/series/:seriedId/movies/:moviesId", function (re
     })
 })
 
-moviesRouter.post(":productionId/series/:seriedId/movies", function (req, res) {
+moviesRouter.post("/:productionId/series/:seriedId/movies", function (req, res) {
   moviesApi.addMovie(req.body)
   .then(() => {
-    res.redirect("/")
+    res.redirect("/:productionId/series/:seriedId/movies")
   })
   .catch((error) => {
     console.log(error) //will show error in console
   })
 })
 
-moviesRouter.put(":productionId/series/:seriedId/movies/:moviesId", function (req, res) {
+moviesRouter.put("/:productionId/series/:seriedId/movies:moviesId", function (req, res) {
   moviesApi.updateMovie(req.params.moviesId, req.body)
   .then(() => {
-    res.redirect("/")
+    res.redirect("/:productionId/series/:seriedId/movies")
   })
   .catch((error) => {
     console.log(error) //will show error in console
   })
 })
 
-moviesRouter.delete(":productionId/series/:seriedId/movies/:moviesId", function (req, res) {
+moviesRouter.delete("/:productionId/series/:seriedId/movies:moviesId", function (req, res) {
   moviesApi.deleteMovie(req.params.moviesId)
   .then(() => {
-    res.redirect("/") //redirects to "/", can use any url, etc.
+    res.redirect("/:productionId/series/:seriedId/movies") //redirects to "/", can use any url, etc.
   })
   .catch((error) => {
     console.log(error) //will show error in console
