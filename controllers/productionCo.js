@@ -15,8 +15,8 @@ const express = require('express')
  * controller you need.
  * 
  */
-const productionApi = require('../models/productionCo.js')
-
+const productionApi = require("../models/productionCo.js")
+const seriesApi = require("../models/series.js")
 /* Step 3 
  * 
  * Create a new router.
@@ -34,7 +34,7 @@ const productionCoRouter = express.Router()
 
 // get all companies
 productionCoRouter.get("/", function (req, res) {
-  productionApi.getAllProductionCo()
+  productionApi.getAllProductionCo().populate("series") //populate production co with series
     .then((allProductions) => {
       res.render("companies/allCompany", {allProductions})
     })
@@ -43,6 +43,7 @@ productionCoRouter.get("/", function (req, res) {
     })
 })
 
+// actually create new productionCo
 productionCoRouter.post("/", function (req, res) {
   productionApi.addProductionCo(req.body)
   .then(() => {
@@ -53,7 +54,7 @@ productionCoRouter.post("/", function (req, res) {
   })
 })
 
-// create new company
+// create new company route
 productionCoRouter.get("/new", function (req, res) {
   productionApi.addProductionCo(req.params.productionId)
     .then((getProductionCo) => {
