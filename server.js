@@ -63,9 +63,10 @@ app.set('view engine', 'hbs')
  * add router for the application to use. The first argument is a prefix to all
  * the paths defined in the router.
  */
-
-app.use("/:productionid/movies/:moviesid/series", seriesRouter)
-app.use("/:productionid/movies", moviesRouter)
+app.use("/series", seriesRouter)
+app.use("/movies", moviesRouter)
+// app.use("/:productionid/movies", seriesRouter)
+// app.use("/:moviesid/series/:productionid/movies", moviesRouter)
 app.use("/", productionCoRouter)
 /* Step 5
  *

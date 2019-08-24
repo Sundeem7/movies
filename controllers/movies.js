@@ -46,7 +46,7 @@ moviesRouter.get("/", function (req, res) {
 
 
 // create new company
-moviesRouter.get("/new", function (req, res) {
+moviesRouter.get("/newMovies", function (req, res) {
   moviesApi.addMovie(req.params.moviesId)
     .then((getMovie) => {
       res.send({getMovie})
@@ -57,8 +57,12 @@ moviesRouter.get("/new", function (req, res) {
 })
 
 // render createForm
-moviesRouter.get("/add", function (req, res) { 
-    res.render("movieTitles/createMovieTitles", {})
+moviesRouter.get("/addMovies", function (req, res) { 
+    res.render("movieTitles/createMovieTitles", {
+    })
+    .catch((error) => {
+      console.log(error) //will show error in console
+    })
 })
 
 // get one company by moviesId

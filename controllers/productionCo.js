@@ -43,7 +43,15 @@ productionCoRouter.get("/", function (req, res) {
     })
 })
 
-
+productionCoRouter.post("/", function (req, res) {
+  productionApi.addProductionCo(req.body)
+  .then(() => {
+    res.redirect("/")
+  })
+  .catch((error) => {
+    console.log(error) //will show error in console
+  })
+})
 
 // create new company
 productionCoRouter.get("/new", function (req, res) {
@@ -72,15 +80,7 @@ productionCoRouter.get("/:productionId", function (req, res) {
     })
 })
 
-productionCoRouter.post("/", function (req, res) {
-  productionApi.addProductionCo(req.body)
-  .then(() => {
-    res.redirect("/")
-  })
-  .catch((error) => {
-    console.log(error) //will show error in console
-  })
-})
+
 
 productionCoRouter.put("/:productionId", function (req, res) {
   productionApi.updateProductionCo(req.params.productionId, req.body)
