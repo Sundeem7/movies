@@ -33,7 +33,7 @@ const moviesRouter = express.Router()
  */
 
 // get all movieTitles
-moviesRouter.get("/", function (req, res) {
+moviesRouter.get(":productionId/series/:seriedId/movies", function (req, res) {
   moviesApi.getAllMovie()
     .then((allMovies) => {
       res.render("movieTitles/allMovieTitles", {allMovies})
@@ -46,7 +46,7 @@ moviesRouter.get("/", function (req, res) {
 
 
 // create new company
-moviesRouter.get("/newMovies", function (req, res) {
+moviesRouter.get(":productionId/series/:seriedId/movies/new", function (req, res) {
   moviesApi.addMovie(req.params.moviesId)
     .then((getMovie) => {
       res.send({getMovie})
@@ -57,7 +57,7 @@ moviesRouter.get("/newMovies", function (req, res) {
 })
 
 // render createForm
-moviesRouter.get("/addMovies", function (req, res) { 
+moviesRouter.get(":productionId/series/:seriedId/movies/add", function (req, res) { 
     res.render("movieTitles/createMovieTitles", {
     })
     .catch((error) => {
@@ -66,7 +66,7 @@ moviesRouter.get("/addMovies", function (req, res) {
 })
 
 // get one company by moviesId
-moviesRouter.get("/:moviesId", function (req, res) {
+moviesRouter.get(":productionId/series/:seriedId/movies/:moviesId", function (req, res) {
   moviesApi.getOneMovie(req.params.moviesId)
     .then((moviesFromDb) => {
       res.render("movieTitles/oneMovieTitle", {_id: req.params.moviesId, moviesFromDb})
@@ -76,7 +76,7 @@ moviesRouter.get("/:moviesId", function (req, res) {
     })
 })
 
-moviesRouter.post("/", function (req, res) {
+moviesRouter.post(":productionId/series/:seriedId/movies", function (req, res) {
   moviesApi.addMovie(req.body)
   .then(() => {
     res.redirect("/")
@@ -86,7 +86,7 @@ moviesRouter.post("/", function (req, res) {
   })
 })
 
-moviesRouter.put("/:moviesId", function (req, res) {
+moviesRouter.put(":productionId/series/:seriedId/movies/:moviesId", function (req, res) {
   moviesApi.updateMovie(req.params.moviesId, req.body)
   .then(() => {
     res.redirect("/")
@@ -96,7 +96,7 @@ moviesRouter.put("/:moviesId", function (req, res) {
   })
 })
 
-moviesRouter.delete("/:moviesId", function (req, res) {
+moviesRouter.delete(":productionId/series/:seriedId/movies/:moviesId", function (req, res) {
   moviesApi.deleteMovie(req.params.moviesId)
   .then(() => {
     res.redirect("/") //redirects to "/", can use any url, etc.
