@@ -69,9 +69,6 @@ moviesRouter.get("/movies/new", function (req, res) {
 moviesRouter.get("/movies/add", function (req, res) { 
     res.render("movieTitles/createMovieTitles", {
     })
-    // .catch((error) => {
-    //   console.log(error) //will show error in console
-    // })
 })
 
 // get one company by moviesId
@@ -84,8 +81,6 @@ moviesRouter.get("/movies/:moviesId", function (req, res) {
       console.log(error) //will show error in console
     })
 })
-
-
 
 moviesRouter.put("/movies/:moviesId", function (req, res) {
   moviesApi.updateMovie(req.params.moviesId, req.body)

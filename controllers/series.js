@@ -43,9 +43,20 @@ seriesRouter.get("/series", function (req, res) {
     })
 })
 
+// actually create new series
+seriesRouter.post("/series", function (req, res) {
+  seriesApi.addSeries(req.body)
+  .then(() => {
+    res.redirect("/series")
+  })
+  .catch((error) => {
+    console.log(error) //will show error in console
+  })
+})
 
 
-// create new company
+
+// create new series route
 seriesRouter.get("/series/new", function (req, res) {
   seriesApi.addSeries(req.params.seriesId)
     .then((getSeries) => {
@@ -58,7 +69,8 @@ seriesRouter.get("/series/new", function (req, res) {
 
 // render createForm
 seriesRouter.get("/series/add", function (req, res) {
-    res.render("franchises/createFranchise", {})
+    res.render("franchises/createFranchise", {
+    })
 })
 
 // get one company by seriesId
@@ -70,16 +82,6 @@ seriesRouter.get("/series/:seriesId", function (req, res) {
     .catch((error) => {
       console.log(error) //will show error in console
     })
-})
-
-seriesRouter.post("/series", function (req, res) {
-  seriesApi.addSeries(req.body)
-  .then(() => {
-    res.redirect("/series")
-  })
-  .catch((error) => {
-    console.log(error) //will show error in console
-  })
 })
 
 seriesRouter.put("/series/:seriesId", function (req, res) {
