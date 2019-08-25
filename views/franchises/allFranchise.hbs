@@ -1,13 +1,13 @@
 <h1>All Movie Franchises</h1>
 
-<a href="/add/">New Movie Franchise</a>
+<a href="/series/add/">New Movie Franchise</a>
 
 <ul>
     {{!-- this will create an li for EACH item --}}
     {{#each allSeries}}
     <li>
         {{!-- print out name of production company you are looking for  --}}
-        <a href="/{{_id}}">{{franchiseName}}</a>  
+        <a href="/series/{{_id}}">{{franchiseName}}</a>  
 
     </li>
     {{/each}}

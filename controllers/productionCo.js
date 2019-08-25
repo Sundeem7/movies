@@ -16,7 +16,7 @@ const express = require('express')
  * 
  */
 const productionApi = require("../models/productionCo.js")
-const seriesApi = require("../models/series.js")
+// const seriesApi = require("../models/series.js")
 /* Step 3 
  * 
  * Create a new router.

@@ -36,7 +36,7 @@ const seriesRouter = express.Router()
 seriesRouter.get("/series", function (req, res) {
   seriesApi.getAllSeries()
     .then((allSeries) => {
-      res.render("franchises/allFranchises", {allSeries})
+      res.render("franchises/allFranchise", {allSeries})
     })
     .catch((error) => {
       console.log(error) //will show error in console
@@ -58,7 +58,7 @@ seriesRouter.get("/series/new", function (req, res) {
 
 // render createForm
 seriesRouter.get("/series/add", function (req, res) {
-    res.render("franchises/createFranchises", {})
+    res.render("franchises/createFranchise", {})
 })
 
 // get one company by seriesId
@@ -85,7 +85,7 @@ seriesRouter.post("/series", function (req, res) {
 seriesRouter.put("/series/:seriesId", function (req, res) {
   seriesApi.updateSeries(req.params.seriesId, req.body)
   .then(() => {
-    res.redirect("/:productionId/series")
+    res.redirect("/series")
   })
   .catch((error) => {
     console.log(error) //will show error in console

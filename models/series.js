@@ -26,6 +26,7 @@ const mongoose = require('./connection.js')
  * NOTE: skip this if you are not using mongoose
  *
  */
+
 const seriesSchema = mongoose.Schema({
   franchiseName: String,
   numberOfMovies: Number,
@@ -47,6 +48,7 @@ const seriesSchema = mongoose.Schema({
  *
  */
 const seriesCollection = mongoose.model('series', seriesSchema)
+
 
 /* Step 4
  *
