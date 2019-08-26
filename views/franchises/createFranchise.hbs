@@ -1,4 +1,4 @@
-<form method="POST" action="/series">
+<form method="POST" action="/:productionId/series">
 <h1>Enter A Franchise</h1>
 
 <!-- Template for creating input form for a string object key called stringMember-->
@@ -14,7 +14,7 @@
     <label for="totalBudget">Total Budget</label>
     <input type="number"  name="totalBudget" required/>
 
-    <input type="hidden"> <input>
+    {{!-- <input type="hidden"> <input> --}}
 
     <input type="submit" value="Add Franchise"/>
 </form>

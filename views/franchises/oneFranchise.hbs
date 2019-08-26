@@ -1,8 +1,8 @@
 <div>
-    <form action="/series/{{seriesFromDb._id}}?_method=DELETE" method="POST">
+    <form action="/:productionId/series/{{seriesFromDb._id}}?_method=DELETE" method="POST">
     <input type="submit" value="Delete Issue"/>
     </form>
-    <form action="/series/{{seriesFromDb._id}}?_method=PUT" method="POST">
+    <form action="/:productionId/series/{{seriesFromDb._id}}?_method=PUT" method="POST">
     
     <input type="submit" value="Edit Franchise" />
 
@@ -18,9 +18,10 @@
     <label for="totalBudget">Total Budget</label>
     <input type="number"  name="totalBudget" value="{{seriesFromDb.totalBudget}}" required/>
 
-    <input type="hidden" value="{{seriesId._id}}"> <input>
+    {{!-- <input type="hidden" value="{{seriesId._id}}"> <input> --}}
 
-    <input type="hidden" value="{{productionId._id}}"> <input>
+    {{!-- <input type="hidden" value="{{productionId._id}}"> <input> --}}
 
     </form>
 </div>
+<a href="/:productionCoId/series/:seriesId/movies/add">Add a Franchise</a>
