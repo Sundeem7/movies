@@ -27,7 +27,7 @@ const mongoose = require('./connection.js')
  *
  */
 
-const productionCoSchema = mongoose.Schema({
+const booksSchema = mongoose.Schema({
   name: String,
   revenue: Number,
   amusementPark: Boolean,
@@ -45,7 +45,7 @@ const productionCoSchema = mongoose.Schema({
  * NOTE: skip this if you are not using mongoose
  *
  */
-const productionCoCollection = mongoose.model('productionCo', productionCoSchema)
+const booksCollection = mongoose.model('books', booksSchema)
 
 
 /* Step 4
@@ -54,27 +54,27 @@ const productionCoCollection = mongoose.model('productionCo', productionCoSchema
  *
  */
 // READ/ get
-const getAllProductionCo = () => {
-  return productionCoCollection.find();
+const getAllBooks = () => {
+  return booksCollection.find();
 }
 
-const getOneProductionCo = (productionId) => {
-  return productionCoCollection.findById(productionId)
+const getOneBooks = (productionId) => {
+  return booksCollection.findById(productionId)
 }
 
 // CREATE/ post
-const addProductionCo = (newProduction) => {
-  return productionCoCollection.create(newProduction)
+const addBooks = (newProduction) => {
+  return booksCollection.create(newProduction)
 }
 
 // UPDATE/ edit
-const updateProductionCo = (productionId, updatedProduction) => {
-  return productionCoCollection.updateOne({ _id: productionId }, updatedProduction)
+const updateBooks = (productionId, updatedProduction) => {
+  return booksCollection.updateOne({ _id: productionId }, updatedProduction)
 }
 
 // DELETE
-const deleteProductionCo = (productionId) => {
-  return productionCoCollection.findByIdAndDelete(productionId)
+const deleteBooks = (productionId) => {
+  return booksCollection.findByIdAndDelete(productionId)
 }
 
 
@@ -85,9 +85,9 @@ const deleteProductionCo = (productionId) => {
  * object
  */
 module.exports = {
-  addProductionCo,
-  deleteProductionCo,
-  getAllProductionCo,
-  getOneProductionCo,
-  updateProductionCo
+  addBooks,
+  deleteBooks,
+  getAllBooks,
+  getOneBooks,
+  updateBooks
 }

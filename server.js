@@ -17,7 +17,7 @@ const methodOverride = require('method-override')
  * import routers from controllers/
  *
  */
-const {productionCoRouter} = require("./controllers/productionCo.js")
+const {booksRouter} = require("./controllers/books.js")
 const {seriesRouter} = require("./controllers/series.js")
 const {moviesRouter} = require("./controllers/movies.js")
 
@@ -67,7 +67,7 @@ app.use("/", seriesRouter)
 app.use("/", moviesRouter)
 // app.use("/:productionid/movies", seriesRouter)
 // app.use("/:moviesid/series/:productionid/movies", moviesRouter)
-app.use("/", productionCoRouter)
+app.use("/", booksRouter)
 /* Step 5
  *
  * Set the port the server is to run on
