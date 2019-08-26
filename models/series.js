@@ -32,7 +32,6 @@ const seriesSchema = mongoose.Schema({
   numberOfMovies: Number,
   totalRevenue: Number,
   totalBudget: Number,
-
   // movies: [
   //   {
   //     type: Schema.Types.ObjectId, //calls the specific object type
@@ -68,6 +67,16 @@ const getOneSeries = (seriesId) => {
 const addSeries = (newSeries) => {
   return seriesCollection.create(newSeries)
 }
+
+// const addSeries = () => {
+
+//   return seriesCollection.create({
+//     franchiseName: "",
+//     numberOfMovies: 0,
+//     totalRevenue: 0,
+//     totalBudget: 0,
+//   })
+// }
 
 // UPDATE/ edit
 const updateSeries = (seriesId, updatedSeries) => {
