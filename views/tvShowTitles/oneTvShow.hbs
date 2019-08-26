@@ -1,0 +1,22 @@
+<div>
+    <form action="/tvShows/{{tvShowsFromDb._id}}?_method=DELETE" method="POST">
+    <input type="submit" value="Delete Issue"/>
+    </form>
+    <form action="/tvShows/{{tvShowsFromDb._id}}?_method=PUT" method="POST">
+    
+    <input type="submit" value="Edit Franchise" />
+
+    <label for="franchiseName">Franchise Name</label>
+    <input type="text" name="franchiseName" value="{{tvShowsFromDb.franchiseName}}" required/>
+
+    <label for="numberOfMovies">Number of Movies in Franchise</label>
+    <input type="number"  name="numberOfMovies" value="{{tvShowsFromDb.numberOfMovies}}" required/>
+
+    <label for="totalRevenue">Total Revenue</label>
+    <input type="number"  name="totalRevenue" value="{{tvShowsFromDb.totalRevenue}}" required/>
+
+    <label for="totalBudget">Total Budget</label>
+    <input type="number"  name="totalBudget" value="{{tvShowsFromDb.totalBudget}}" required/>
+
+    </form>
+</div>

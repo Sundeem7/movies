@@ -15,7 +15,7 @@ const express = require('express')
  * controller you need.
  * 
  */
-const seriesApi = require('../models/series.js')
+const tvShowsApi = require('../models/tvShows.js')
 
 /* Step 3 
  * 
@@ -25,29 +25,29 @@ const seriesApi = require('../models/series.js')
  * TODO: rename this from templateRouter to something that makes sense. (e.g:
  * `shopRouter`)
  */
-const seriesRouter = express.Router()
+const tvShowsRouter = express.Router()
 
 /* Step 4
  * 
  * TODO: Put all request handlers here
  */
 
-// get all franchises
-seriesRouter.get("/series", function (req, res) {
-  seriesApi.getAllSeries().populate('movie') //populate series with movies
-    .then((allSeries) => {
-      res.render("franchises/allFranchise", {allSeries})
+// get all tvShows
+tvShowsRouter.get("/tvShows", function (req, res) {
+  tvShowsApi.getAllTvShows()
+    .then((alltvShows) => {
+      res.render("/tvShowTitles/allTvShowTitles", {alltvShows})
     })
     .catch((error) => {
       console.log(error) //will show error in console
     })
 })
 
-// actually create new series
-seriesRouter.post("/series", function (req, res) {
-  seriesApi.addSeries(req.body)
+// actually create new tvShows
+tvShowsRouter.post("/tvShows", function (req, res) {
+  tvShowsApi.addTvShows(req.body)
   .then(() => {
-    res.redirect("/series")
+    res.redirect("/tvShows")
   })
   .catch((error) => {
     console.log(error) //will show error in console
@@ -56,11 +56,11 @@ seriesRouter.post("/series", function (req, res) {
 
 
 
-// create new series route
-seriesRouter.get("/series/new", function (req, res) {
-  seriesApi.addSeries(req.params.seriesId)
-    .then((getSeries) => {
-      res.send({getSeries})
+// create new tvShows route
+tvShowsRouter.get("/tvShows/new", function (req, res) {
+  tvShowsApi.addTvShows(req.params.tvShowsId)
+    .then((getTvShows) => {
+      res.send({getTvShows})
     })
     .catch((error) => {
       console.log(error) //will show error in console
@@ -68,36 +68,36 @@ seriesRouter.get("/series/new", function (req, res) {
 })
 
 // render createForm
-seriesRouter.get("/series/add", function (req, res) {
-    res.render("franchises/createFranchise", {
+tvShowsRouter.get("/tvShows/add", function (req, res) {
+    res.render("/tvShowTitles/createTvShow", {
     })
 })
 
-// get one company by seriesId
-seriesRouter.get("/series/:seriesId", function (req, res) {
-  seriesApi.getOneSeries(req.params.seriesId)
-    .then((seriesFromDb) => {
-      res.render("franchises/oneFranchise", {_id: req.params.seriesId, seriesFromDb})
+// get one company by tvShowsId
+tvShowsRouter.get("/tvShows/:tvShowsId", function (req, res) {
+  tvShowsApi.getOneTvShows(req.params.tvShowsId)
+    .then((tvShowsFromDb) => {
+      res.render("/tvShowTitles/oneTvShow", {_id: req.params.tvShowsId, tvShowsFromDb})
     })
     .catch((error) => {
       console.log(error) //will show error in console
     })
 })
 
-seriesRouter.put("/series/:seriesId", function (req, res) {
-  seriesApi.updateSeries(req.params.seriesId, req.body)
+tvShowsRouter.put("/tvShows/:tvShowsId", function (req, res) {
+  tvShowsApi.updateTvShows(req.params.tvShowsId, req.body)
   .then(() => {
-    res.redirect("/series")
+    res.redirect("/tvShows")
   })
   .catch((error) => {
     console.log(error) //will show error in console
   })
 })
 
-seriesRouter.delete("/series/:seriesId", function (req, res) {
-  seriesApi.deleteSeries(req.params.seriesId)
+tvShowsRouter.delete("/tvShows/:tvShowsId", function (req, res) {
+  tvShowsApi.deleteTvShows(req.params.tvShowsId)
   .then(() => {
-    res.redirect("/series") //redirects to "/", can use any url, etc.
+    res.redirect("/tvShows") //redirects to "/", can use any url, etc.
   })
   .catch((error) => {
     console.log(error) //will show error in console
@@ -110,5 +110,5 @@ seriesRouter.delete("/series/:seriesId", function (req, res) {
  *
  */
 module.exports = {
-  seriesRouter
+  tvShowsRouter
 }

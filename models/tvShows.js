@@ -18,7 +18,7 @@ const mongoose = require('./connection.js')
  * your data once you stop running your server.
  *
  */
-// global.seriesModel = [];
+// global.TvShowsModel = [];
 
 /* Step 2
  *
@@ -27,7 +27,7 @@ const mongoose = require('./connection.js')
  *
  */
 
-const seriesSchema = mongoose.Schema({
+const tvShowsSchema = mongoose.Schema({
   franchiseName: String,
   numberOfMovies: Number,
   totalRevenue: Number,
@@ -44,7 +44,7 @@ const seriesSchema = mongoose.Schema({
  * NOTE: skip this if you are not using mongoose
  *
  */
-const seriesCollection = mongoose.model("series", seriesSchema)
+const tvShowsCollection = mongoose.model("tvShows", tvShowsSchema)
 
 
 /* Step 4
@@ -53,27 +53,27 @@ const seriesCollection = mongoose.model("series", seriesSchema)
  *
  */
 // READ/ get
-const getAllSeries = () => {
-  return seriesCollection.find();
+const getAllTvShows = () => {
+  return tvShowsCollection.find();
 }
 
-const getOneSeries = (seriesId) => {
-  return seriesCollection.findById(seriesId)
+const getOneTvShows = (tvShowsId) => {
+  return tvShowsCollection.findById(tvShowsId)
 }
 
 // CREATE/ post
-const addSeries = (newSeries) => {
-  return seriesCollection.create(newSeries)
+const addTvShows = (newTvShows) => {
+  return tvShowsCollection.create(newTvShows)
 }
 
 // UPDATE/ edit
-const updateSeries = (seriesId, updatedSeries) => {
-  return seriesCollection.updateOne({_id: seriesId}, updatedSeries)
+const updateTvShows = (tvShowsId, updatedTvShows) => {
+  return tvShowsCollection.updateOne({_id: tvShowsId}, updatedTvShows)
 }
 
 // DELETE
-const deleteSeries = (seriesId) => {
-  return seriesCollection.findByIdAndDelete(seriesId)
+const deleteTvShows = (tvShowsId) => {
+  return tvShowsCollection.findByIdAndDelete(tvShowsId)
 }
 
 /* Step 5
@@ -82,9 +82,9 @@ const deleteSeries = (seriesId) => {
  * object
  */
 module.exports = {
-  addSeries,
-  deleteSeries,
-  getAllSeries,
-  getOneSeries,
-  updateSeries
+  addTvShows,
+  deleteTvShows,
+  getAllTvShows,
+  getOneTvShows,
+  updateTvShows
 }

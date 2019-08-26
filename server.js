@@ -18,7 +18,7 @@ const methodOverride = require('method-override')
  *
  */
 const {booksRouter} = require("./controllers/books.js")
-const {seriesRouter} = require("./controllers/series.js")
+const {tvShowsRouter} = require("./controllers/tvShows.js")
 const {moviesRouter} = require("./controllers/movies.js")
 
 
@@ -63,10 +63,10 @@ app.set('view engine', 'hbs')
  * add router for the application to use. The first argument is a prefix to all
  * the paths defined in the router.
  */
-app.use("/", seriesRouter)
+app.use("/", tvShowsRouter)
 app.use("/", moviesRouter)
-// app.use("/:productionid/movies", seriesRouter)
-// app.use("/:moviesid/series/:productionid/movies", moviesRouter)
+// app.use("/:productionid/movies", tvShowsRouter)
+// app.use("/:moviesid/tvShows/:productionid/movies", moviesRouter)
 app.use("/", booksRouter)
 /* Step 5
  *
