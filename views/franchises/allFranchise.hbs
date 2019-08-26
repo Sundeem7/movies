@@ -7,7 +7,12 @@
     {{#each allSeries}}
     <li>
         {{!-- print out name of production company you are looking for  --}}
-        <a href="/series/{{_id}}">{{franchiseName}}</a>  
+        <a href="/series/{{_id}}">{{franchiseName}}</a>
+        <ul>
+            <li>Number of Movies in Franchise: {{numberOfMovies}}</li>
+            <li>Box Office: ${{totalBudget}}.00</li>
+            <li>Budget: ${{totalRevenue}}.00</li>
+        </ul> 
     </li>
     {{/each}}
 </ul>
