@@ -1,16 +1,18 @@
 <div>
+    <input type="hidden" name="productionId" value="{{productionCoFromDb._id}}">
+
     <form action="/{{productionCoFromDb._id}}?_method=DELETE" method="POST">
         <input type="submit" value="Delete Issue" />
     </form>
     <form action="/{{productionCoFromDb._id}}?_method=PUT" method="POST">
 
-        <input type="submit" value="Edit Production Company" required/>
+        <input type="submit" value="Edit {{productionCoFromDb.name}}" required />
 
         <label for="name">Production Company Name</label>
-        <input type="text" name="name" value="{{productionCoFromDb.name}}" required/>
+        <input type="text" name="name" value="{{productionCoFromDb.name}}" required />
 
         <label for="revenue">Revenue</label>
-        <input type="number" name="revenue" value="{{productionCoFromDb.revenue}}" required/>
+        <input type="number" name="revenue" value="{{productionCoFromDb.revenue}}" required />
 
         <label for="amusementPark">Amusement Park</label>
         <select name="amusementPark">
@@ -19,4 +21,21 @@
         </select>
     </form>
 </div>
-<a href="/:productionCoId/series/add/">Add a Franchise</a>
+<h1>{{productionCoFromDb.name}} Franchises</h1>
+
+<a href="/:productionId/series/add/">Add a Franchise for {{productionCoFromDb.name}}</a>
+
+<ul>
+    {{!-- this will create an li for EACH item --}}
+    {{#each getSeriesByParentId}}
+    <li>
+        {{!-- print out name of production company you are looking for  --}}
+        <a href="/:productionId/series/{{_id}}">{{franchiseName}}</a>
+        <ul>
+            <li>Number of Movies in Franchise: {{numberOfMovies}}</li>
+            <li>Box Office: ${{totalBudget}}.00</li>
+            <li>Budget: ${{totalRevenue}}.00</li>
+        </ul> 
+    </li>
+    {{/each}}
+</ul>

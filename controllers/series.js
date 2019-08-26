@@ -47,7 +47,7 @@ seriesRouter.get("/:productionId/series", function (req, res) {
 seriesRouter.post("/:productionId/series", function (req, res) {
   seriesApi.addSeries(req.body)
   .then(() => {
-    res.redirect("/:productionId/series")
+    res.redirect("franchises/allFranchise")
   })
   .catch((error) => {
     console.log(error) //will show error in console
@@ -68,8 +68,8 @@ seriesRouter.get("/:productionId/series/new", function (req, res) {
 })
 
 // render createForm
-seriesRouter.get("/:productionCoId/series/add", function (req, res) {
-    res.render("franchises/createFranchise", {_productionId: req.params.productionCoId
+seriesRouter.get("/:productionId/series/add", function (req, res) {
+    res.render("franchises/createFranchise", {_productionId: req.params.productionId
     })
 })
 

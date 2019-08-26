@@ -1,13 +1,13 @@
 <h1>All Movie Titles</h1>
 
-<a href="/:productionCoId/series/:seriesId/movies/add">New Movie Title</a>
+<a href="/:productionId/series/:seriesId/movies/add">New Movie Title</a>
 
 <ul>
     {{!-- this will create an li for EACH item --}}
     {{#each allMovies}}
     <li>
         {{!-- print out name of production company you are looking for  --}}
-        <a href="/:productionCoId/series/:seriesId/movies/{{_id}}">{{nameOfMovie}}</a>  
+        <a href="/:productionId/series/:seriesId/movies/{{_id}}">{{nameOfMovie}}</a>  
 <ul>
             <li>Number in Franchise: {{numberInFranchise}}</li>
             <li>Release Date: {{releaseDate}}</li>

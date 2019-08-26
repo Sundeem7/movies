@@ -65,6 +65,12 @@ const getOneSeries = (seriesId) => {
   return seriesCollection.findById(seriesId)
 }
 
+const getSeriesByParentId = (productionId) => {
+  return seriesCollection.find(productionId)
+}
+// console.log(productionId)
+console.log(getSeriesByParentId)
+
 // CREATE/ post
 const addSeries = (newSeries) => {
   return seriesCollection.create(newSeries)
@@ -90,5 +96,6 @@ module.exports = {
   deleteSeries,
   getAllSeries,
   getOneSeries,
+  // getSeriesByParentId,
   updateSeries,
 }
