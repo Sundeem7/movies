@@ -68,16 +68,6 @@ const addSeries = (newSeries) => {
   return seriesCollection.create(newSeries)
 }
 
-// const addSeries = () => {
-
-//   return seriesCollection.create({
-//     franchiseName: "",
-//     numberOfMovies: 0,
-//     totalRevenue: 0,
-//     totalBudget: 0,
-//   })
-// }
-
 // UPDATE/ edit
 const updateSeries = (seriesId, updatedSeries) => {
   return seriesCollection.updateOne({_id: seriesId}, updatedSeries)

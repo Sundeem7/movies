@@ -7,8 +7,11 @@
     {{#each allProductions}}
     <li>
         {{!-- print out name of production company you are looking for  --}}
-        <a href="/{{_id}}">{{name}}</a>  
-
+        <a href="/{{_id}}">{{name}}</a>
+        <ul>
+            <li>Total Revenue: ${{revenue}}.00</li>
+            <li>Amusement Park: {{amusementPark}}</li>
+        </ul>
     </li>
     {{/each}}
 </ul>

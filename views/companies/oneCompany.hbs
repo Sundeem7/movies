@@ -1,19 +1,21 @@
 <div>
     <form action="/{{productionCoFromDb._id}}?_method=DELETE" method="POST">
-    <input type="submit" value="Delete Issue"/>
+        <input type="submit" value="Delete Issue" />
     </form>
     <form action="/{{productionCoFromDb._id}}?_method=PUT" method="POST">
-    
-    <input type="submit" value="Edit Production Company" />
 
-    <label for="name">Production Company Name</label>
-    <input type="text" name="name" value="{{productionCoFromDb.name}}"/>
+        <input type="submit" value="Edit Production Company" />
 
-    <label for="revenue">Revenue</label>
-    <input type="number" name="revenue" value="{{productionCoFromDb.revenue}}"/>
+        <label for="name">Production Company Name</label>
+        <input type="text" name="name" value="{{productionCoFromDb.name}}" />
 
-    <label for="amusementPark">Amusement Park</label>
-    <input type="checkbox"  name="amusementPark" value="{{productionCoFromDb.amusementPark}}"/>
+        <label for="revenue">Revenue</label>
+        <input type="number" name="revenue" value="{{productionCoFromDb.revenue}}" />
 
+        <label for="amusementPark">Amusement Park</label>
+        <select name="amusementPark">
+            <option value="yes">Yes</option>
+            <option value="no" selected>No</option>
+        </select>
     </form>
 </div>
