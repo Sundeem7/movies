@@ -3,13 +3,16 @@
 
 <!-- Template for creating input form for a string object key called stringMember-->
     <label for="name">Production Company Name</label>
-    <input type="text" name="name"/>
+    <input type="text" name="name" required/>
 
     <label for="revenue">Revenue</label>
-    <input type="number"  name="revenue"/>
+    <input type="number"  name="revenue" required/>
 
     <label for="amusementPark">Amusement Park</label>
-    <input type="checkbox"  name="amusementPark" value="true"/>
+    <select name="amusementPark">
+        <option value="yes">Yes</option>
+        <option value="no" selected>No</option>
+    </select>
 
     <input type="submit" value="Create Production Company" />
 </form>

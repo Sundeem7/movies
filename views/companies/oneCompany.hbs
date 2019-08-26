@@ -4,13 +4,13 @@
     </form>
     <form action="/{{productionCoFromDb._id}}?_method=PUT" method="POST">
 
-        <input type="submit" value="Edit Production Company" />
+        <input type="submit" value="Edit Production Company" required/>
 
         <label for="name">Production Company Name</label>
         <input type="text" name="name" value="{{productionCoFromDb.name}}" required/>
 
         <label for="revenue">Revenue</label>
-        <input type="number" name="revenue" value="{{productionCoFromDb.revenue}}" />
+        <input type="number" name="revenue" value="{{productionCoFromDb.revenue}}" required/>
 
         <label for="amusementPark">Amusement Park</label>
         <select name="amusementPark">
