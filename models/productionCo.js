@@ -27,14 +27,13 @@ const mongoose = require('./connection.js')
  *
  */
 
+const ObjectId = mongoose.ObjectId;
+
 const productionCoSchema = mongoose.Schema({
   name: String,
   revenue: Number,
   amusementPark: Boolean,
-  // series: [{
-  //   type: Schema.Types.ObjectId, //calls the specific object type
-  //   ref: "series" //referencing file series
-  // }]
+  _productionId: ObjectId
 })
 
 
@@ -89,5 +88,5 @@ module.exports = {
   deleteProductionCo,
   getAllProductionCo,
   getOneProductionCo,
-  updateProductionCo
+  updateProductionCo,
 }

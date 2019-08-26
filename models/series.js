@@ -27,15 +27,19 @@ const mongoose = require('./connection.js')
  *
  */
 
+const ObjectId = mongoose.ObjectId;
+
 const seriesSchema = mongoose.Schema({
   franchiseName: String,
   numberOfMovies: Number,
   totalRevenue: Number,
   totalBudget: Number,
-  // movies: [{
-  //     type: Schema.Types.ObjectId, //calls the specific object type
-  //     ref: "movie" //referencing file movies
-  //  }]
+  seriesId: ObjectId,
+  _productionId: ObjectId
+  // {
+  //   required: true,
+  //   type: Schema.ObjectId()
+  // }
 })
 
 /* Step 3
@@ -86,5 +90,5 @@ module.exports = {
   deleteSeries,
   getAllSeries,
   getOneSeries,
-  updateSeries
+  updateSeries,
 }

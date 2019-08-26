@@ -33,7 +33,7 @@ const seriesRouter = express.Router()
  */
 
 // get all franchises
-seriesRouter.get("/series", function (req, res) {
+seriesRouter.get("/:productionId/series", function (req, res) {
   seriesApi.getAllSeries().populate('movie') //populate series with movies
     .then((allSeries) => {
       res.render("franchises/allFranchise", {allSeries})
@@ -44,10 +44,10 @@ seriesRouter.get("/series", function (req, res) {
 })
 
 // actually create new series
-seriesRouter.post("/series", function (req, res) {
+seriesRouter.post("/:productionId/series", function (req, res) {
   seriesApi.addSeries(req.body)
   .then(() => {
-    res.redirect("/series")
+    res.redirect("/:productionId/series")
   })
   .catch((error) => {
     console.log(error) //will show error in console
@@ -57,7 +57,7 @@ seriesRouter.post("/series", function (req, res) {
 
 
 // create new series route
-seriesRouter.get("/series/new", function (req, res) {
+seriesRouter.get("/:productionId/series/new", function (req, res) {
   seriesApi.addSeries(req.params.seriesId)
     .then((getSeries) => {
       res.send({getSeries})
@@ -68,13 +68,13 @@ seriesRouter.get("/series/new", function (req, res) {
 })
 
 // render createForm
-seriesRouter.get("/series/add", function (req, res) {
-    res.render("franchises/createFranchise", {
+seriesRouter.get("/:productionCoId/series/add", function (req, res) {
+    res.render("franchises/createFranchise", {_productionId: req.params.productionCoId
     })
 })
 
 // get one company by seriesId
-seriesRouter.get("/series/:seriesId", function (req, res) {
+seriesRouter.get("/:productionId/series/:seriesId", function (req, res) {
   seriesApi.getOneSeries(req.params.seriesId)
     .then((seriesFromDb) => {
       res.render("franchises/oneFranchise", {_id: req.params.seriesId, seriesFromDb})
@@ -84,20 +84,20 @@ seriesRouter.get("/series/:seriesId", function (req, res) {
     })
 })
 
-seriesRouter.put("/series/:seriesId", function (req, res) {
+seriesRouter.put("/:productionId/series/:seriesId", function (req, res) {
   seriesApi.updateSeries(req.params.seriesId, req.body)
   .then(() => {
-    res.redirect("/series")
+    res.redirect("/:productionId/series")
   })
   .catch((error) => {
     console.log(error) //will show error in console
   })
 })
 
-seriesRouter.delete("/series/:seriesId", function (req, res) {
+seriesRouter.delete("/:productionId/series/:seriesId", function (req, res) {
   seriesApi.deleteSeries(req.params.seriesId)
   .then(() => {
-    res.redirect("/series") //redirects to "/", can use any url, etc.
+    res.redirect("/:productionId/series") //redirects to "/", can use any url, etc.
   })
   .catch((error) => {
     console.log(error) //will show error in console

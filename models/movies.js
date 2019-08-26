@@ -26,10 +26,18 @@ const mongoose = require('./connection.js')
  * NOTE: skip this if you are not using mongoose
  *
  */
+const ObjectId = mongoose.ObjectId;
+
 const movieSchema = mongoose.Schema({
   nameOfMovie: String,
   numberInFranchise: Number,
-  releaseDate: Date
+  releaseDate: Date,
+  _moviesId: ObjectId,
+  seriesId: ObjectId
+  // {
+  //   required: true,
+  //   type: Schema.ObjectId()
+  // }
 })
 
 /* Step 3

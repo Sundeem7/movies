@@ -33,7 +33,7 @@ const moviesRouter = express.Router()
  */
 
 // get all movieTitles
-moviesRouter.get("/movies", function (req, res) {
+moviesRouter.get("/:productionId/series/:seriesId/movies", function (req, res) {
   moviesApi.getAllMovie()
     .then((allMovies) => {
       res.render("movieTitles/allMovieTitles", {allMovies})
@@ -44,10 +44,10 @@ moviesRouter.get("/movies", function (req, res) {
 })
 
 // actually create new movie
-moviesRouter.post("/movies", function (req, res) {
+moviesRouter.post("/:productionId/series/:seriesId/movies", function (req, res) {
   moviesApi.addMovie(req.body)
   .then(() => {
-    res.redirect("/movies")
+    res.redirect("/:productionId/series/:seriesId/movies")
   })
   .catch((error) => {
     console.log(error) //will show error in console
@@ -55,7 +55,7 @@ moviesRouter.post("/movies", function (req, res) {
 })
 
 // create new movies route
-moviesRouter.get("/movies/new", function (req, res) {
+moviesRouter.get("/:productionId/series/:seriesId/movies/new", function (req, res) {
   moviesApi.addMovie(req.params.moviesId)
     .then((getMovie) => {
       res.send({getMovie})
@@ -66,13 +66,13 @@ moviesRouter.get("/movies/new", function (req, res) {
 })
 
 // render createForm
-moviesRouter.get("/movies/add", function (req, res) { 
-    res.render("movieTitles/createMovieTitles", {
+moviesRouter.get("/:productionId/series/:seriesId/movies/add", function (req, res) { 
+    res.render("movieTitles/createMovieTitles", {_seriesId: req.params.productionCoId
     })
 })
 
 // get one company by moviesId
-moviesRouter.get("/movies/:moviesId", function (req, res) {
+moviesRouter.get("/:productionId/series/:seriesId/movies/:moviesId", function (req, res) {
   moviesApi.getOneMovie(req.params.moviesId)
     .then((moviesFromDb) => {
       res.render("movieTitles/oneMovieTitle", {_id: req.params.moviesId, moviesFromDb})
@@ -82,20 +82,20 @@ moviesRouter.get("/movies/:moviesId", function (req, res) {
     })
 })
 
-moviesRouter.put("/movies/:moviesId", function (req, res) {
+moviesRouter.put("/:productionId/series/:seriesId/movies/:moviesId", function (req, res) {
   moviesApi.updateMovie(req.params.moviesId, req.body)
   .then(() => {
-    res.redirect("/movies")
+    res.redirect("/:productionId/series/:seriesId/movies")
   })
   .catch((error) => {
     console.log(error) //will show error in console
   })
 })
 
-moviesRouter.delete("/movies/:moviesId", function (req, res) {
+moviesRouter.delete("/:productionId/series/:seriesId/movies/:moviesId", function (req, res) {
   moviesApi.deleteMovie(req.params.moviesId)
   .then(() => {
-    res.redirect("/movies") //redirects to "/", can use any url, etc.
+    res.redirect("/:productionId/series/:seriesId/movies") //redirects to "/", can use any url, etc.
   })
   .catch((error) => {
     console.log(error) //will show error in console
