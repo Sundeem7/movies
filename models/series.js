@@ -32,12 +32,10 @@ const seriesSchema = mongoose.Schema({
   numberOfMovies: Number,
   totalRevenue: Number,
   totalBudget: Number,
-  // movies: [
-  //   {
+  // movies: [{
   //     type: Schema.Types.ObjectId, //calls the specific object type
-  //     ref: "movies" //referencing file series
-  //   }
-  // ]
+  //     ref: "movie" //referencing file movies
+  //  }]
 })
 
 /* Step 3
@@ -46,7 +44,7 @@ const seriesSchema = mongoose.Schema({
  * NOTE: skip this if you are not using mongoose
  *
  */
-const seriesCollection = mongoose.model('series', seriesSchema)
+const seriesCollection = mongoose.model("series", seriesSchema)
 
 
 /* Step 4

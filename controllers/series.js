@@ -34,7 +34,7 @@ const seriesRouter = express.Router()
 
 // get all franchises
 seriesRouter.get("/series", function (req, res) {
-  seriesApi.getAllSeries()
+  seriesApi.getAllSeries().populate('movie') //populate series with movies
     .then((allSeries) => {
       res.render("franchises/allFranchise", {allSeries})
     })

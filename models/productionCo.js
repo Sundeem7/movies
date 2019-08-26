@@ -31,12 +31,10 @@ const productionCoSchema = mongoose.Schema({
   name: String,
   revenue: Number,
   amusementPark: Boolean,
-
-  // series: {
-  //     type: Schema.Types.ObjectId, //calls the specific object type
-  //     ref: 'series' //referencing file series
-  //   }
-  
+  // series: [{
+  //   type: Schema.Types.ObjectId, //calls the specific object type
+  //   ref: "series" //referencing file series
+  // }]
 })
 
 
