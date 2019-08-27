@@ -10,15 +10,15 @@
     </ul>
 </div>
 
-<form method="POST" action="/books">
-<h1>Enter a New Book</h1>
 
-<!-- Template for creating input form for a string object key called stringMember-->
+<h1>Enter a New Book</h1>
+<div class="formContainer">
     <label for="name">Book Title</label>
-    <input type="text" name="name" required/>
+    <form method="POST" action="/books"></form>
+    <input type="text" name="name" required />
 
     <label for="revenue">Revenue</label>
-    <input type="number"  name="revenue" required/>
+    <input type="number" name="revenue" required />
 
     <label for="amusementPark">Amusement Park</label>
     <select name="amusementPark">
@@ -27,5 +27,5 @@
     </select>
 
     <input type="submit" value="Create Book" />
-</form>
-
+    </form>
+</div>
