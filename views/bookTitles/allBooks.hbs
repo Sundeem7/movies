@@ -10,20 +10,30 @@
     </ul>
 </div>
 
-<h1>All Books</h1>
+<h1>My Books</h1>
 
-<a href="/books/add">New Book</a>
+<div class="addlistContainer">
+    <a href="/books/add">Add Book</a>
+</div>
 
-<ul>
-    {{!-- this will create an li for EACH item --}}
-    {{#each allBooks}}
-    <li>
-        {{!-- print out name of production company you are looking for  --}}
-        <a href="/books/{{_id}}">{{name}}</a>
-        <ul>
-            <li>Total Revenue: ${{revenue}}.00</li>
-            <li>Amusement Park: {{amusementPark}}</li>
-        </ul>
-    </li>
-    {{/each}}
-</ul>
+<div class="booksContainer">
+    <ul class="listDisplay">
+        {{!-- this will create an li for EACH item --}}
+        {{#each allBooks}}
+        <div class="listContainer">
+            <div class="booksContainer">
+                <img class="imageCard" src="/images/books.jpg" alt="Book Image">
+                <div class="allInfo">
+                    <h3 class="bookTitle">{{name}}</h4>
+                        <article class="stats">
+                            <ul>
+                                <li>Total Revenue: ${{revenue}}.00</li>
+                                <li>Amusement Park: {{amusementPark}}</li>
+                            </ul>
+                        </article>
+                </div>
+            </div>
+        </div>
+        {{/each}}
+    </ul>
+</div>
