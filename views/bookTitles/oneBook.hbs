@@ -10,24 +10,25 @@
     </ul>
 </div>
 
+<div class="formContainer">
 <div>
-    <form action="/books/{{booksFromDb._id}}?_method=DELETE" method="POST">
-        <input type="submit" value="Delete Issue" />
-    </form>
+    
     <form action="/books/{{booksFromDb._id}}?_method=PUT" method="POST">
-
-        <input type="submit" value="Edit Books" required/>
 
         <label for="name">Book Title</label>
         <input type="text" name="name" value="{{booksFromDb.name}}" required/>
 
-        <label for="revenue">Revenue</label>
-        <input type="number" name="revenue" value="{{booksFromDb.revenue}}" required/>
+        <label for="author">Author</label>
+        <input type="text" name="author" value="{{booksFromDb.author}}" required/>
 
-        <label for="amusementPark">Amusement Park</label>
-        <select name="amusementPark">
-            <option value="yes">Yes</option>
-            <option value="no" selected>No</option>
-        </select>
+        <label for="review">Review</label>
+        <textarea rows="4" cols="50" name="review" type="text">
+        Enter review here...</textarea>
+
+        <input type="submit" value="Edit Books" required/>
     </form>
+    <form action="/books/{{booksFromDb._id}}?_method=DELETE" method="POST">
+        <input type="submit" value="Delete Issue" />
+    </form>
+</div>
 </div>

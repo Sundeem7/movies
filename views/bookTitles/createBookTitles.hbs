@@ -10,22 +10,20 @@
     </ul>
 </div>
 
-
-<h1>Enter a New Book</h1>
 <div class="formContainer">
+    <h1 class="nameOfBook formH1">Enter a New Book</h1>
     <label for="name">Book Title</label>
-    <form method="POST" action="/books"></form>
-    <input type="text" name="name" required />
 
-    <label for="revenue">Revenue</label>
-    <input type="number" name="revenue" required />
+    <form method="POST" action="/books">
+        <input class="formInput" type="text" name="name" required />
 
-    <label for="amusementPark">Amusement Park</label>
-    <select name="amusementPark">
-        <option value="yes">Yes</option>
-        <option value="no" selected>No</option>
-    </select>
+        <label for="author">Author</label>
+        <input type="text" name="author" required />
 
-    <input type="submit" value="Create Book" />
+        <label for="review">Review</label>
+        <textarea rows="4" cols="50" name="review" type="text">
+        Enter review here...</textarea>
+
+        <input type="submit" class="addBookButton" value="Create Book" />
     </form>
 </div>
