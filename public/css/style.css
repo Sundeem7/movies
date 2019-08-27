@@ -101,13 +101,18 @@ h1:visited {
     align-items: center;
     border-radius: 5px;
 }
+
+/* .mainContainer {
+    margin: 20px 50px;
+} */
+
 .listContainer {
     border: solid black 1px;
-    height: 300px;
-    width: 200px;
+    height: 400px;
+    width: 250px;
     background-color: #8f0000;
     border-radius: 5px;
-    margin: 20px 50px;
+    margin: 20px 70px;
     box-shadow: 5px 5px 10px gray;
 }
 
@@ -115,6 +120,12 @@ h1:visited {
     border-radius: 50%;
     width: 200px;
     height: 200px;
+    margin: auto;
+}
+
+.booksContainer {
+    padding: 10px;
+    margin: 10px 15px 25px;
 }
 
 .listDisplay {
@@ -125,15 +136,22 @@ h1:visited {
 
 .addListContainer {
     border: solid black 1px;
-    height: 300px;
-    width: 200px;
+    height: 400px;
+    width: 250px;
     background-color: #8f0000;
     border-radius: 5px;
-    margin: 20px 50px;
+    margin: 20px 70px;
     display: flex;
     align-items: center;
     flex-direction: column;
-    box-shadow: 5px 5px 10px gray
+    box-shadow: 5px 5px 10px gray;
+    transition: .2s;
+}
+
+.addListContainer:hover {
+    box-shadow: 5px 5px 5px black, -5px -5px 5px black, 5px -5px 5px black, -5px 5px 5px black;
+    transform: scale(1.1);
+    transition: .2s;
 }
 
 .addImage {
@@ -141,16 +159,42 @@ h1:visited {
     width: 100px;
     height: 100px;
     margin: 50px;
-    transition: .2s
+    transition: .2s;
 }
 
-.addImage:hover {
-    box-shadow: 5px 5px 5px whitesmoke, -5px -5px 5px whitesmoke, 5px -5px 5px whitesmoke, -5px 5px 5px whitesmoke;
-    transform: scale(1.5);
-    transition: .2s
+.addBooksContainer {
+    padding: 10px;
+    margin: 50px 0px;
 }
 
 p {
     font-size: 30px;
     margin: 20px;
+    text-align: center;
+    color: black;
+}
+
+.editButton {
+    display: flex;
+    justify-content: center;
+    margin: 5px;
+    padding: 5px;
+    color: black;
+    background-color: gray;
+    box-shadow: 0 5px white;
+    border-radius: 5px;
+}
+
+.editButton:hover {
+    background-color: rgb(61, 60, 60);
+}
+
+.editButton:active {
+  background-color: rgb(61, 60, 60);
+  box-shadow: 0 2px gray;
+  transform: translateY(3px);
+}
+
+.buttondiv {
+    margin-top: -5px;
 }

@@ -12,39 +12,34 @@
 
 <h1>My Books</h1>
 
-{{!-- <div class="addlistContainer">
-    <a href="/books/add">
-        <!-- image sourced from https://www.iconfinder.com/icons/372917/add_full_more_plus_round_icon -->
-        <img class="addImage" src="/images/add.png" alt="Add List Item Button">
-    </a>
-</div> --}}
-
-<div class="booksContainer">
+<div class="mainContainer">
     <ul class="listDisplay">
         <div class="addListContainer">
-            <p>Add Book</p>
-            <div class="booksContainer">
-                <a href="/books/add">
-                <!-- image sourced from https://www.iconfinder.com/icons/372917/add_full_more_plus_round_icon -->
-                <img class="addImage" src="/images/add.png" alt="Add List Item Button">
+            <a href="/books/add">
+                <p>Add Book</p>
+                <div class="addBooksContainer">
+                    <!-- image sourced from https://www.iconfinder.com/icons/372917/add_full_more_plus_round_icon -->
+                    <img class="addImage" src="/images/add.png" alt="Add List Item Button">
+                </div>
             </a>
-            </div>
         </div>
-        {{!-- this will create an li for EACH item --}}
         {{#each allBooks}}
         <div class="listContainer">
             <div class="booksContainer">
                 <img class="imageCard" src="/images/books.jpg" alt="Book Image">
                 <div class="allInfo">
-                    <h3 class="bookTitle">{{name}}</h4>
-                        <article class="stats">
-                            <ul>
-                                <li>Total Revenue: ${{revenue}}.00</li>
-                                <li>Amusement Park: {{amusementPark}}</li>
-                            </ul>
-                        </article>
+                    <h3 class="bookTitle">{{name}}</h3>
+                    <article class="stats">
+                        <ul>
+                            <li>Total Revenue: ${{revenue}}.00</li>
+                            <li>Amusement Park: {{amusementPark}}</li>
+                        </ul>
+                    </article>
                 </div>
             </div>
+            <div class="buttondiv">
+                    <a href="/books/{{_id}}" type="button" class="editButton">Edit</a>
+                </div>
         </div>
         {{/each}}
     </ul>
