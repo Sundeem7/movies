@@ -122,3 +122,35 @@ h1:visited {
     flex-wrap: wrap;
     justify-content: flex-start;
 }
+
+.addListContainer {
+    border: solid black 1px;
+    height: 300px;
+    width: 200px;
+    background-color: #8f0000;
+    border-radius: 5px;
+    margin: 20px 50px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    box-shadow: 5px 5px 10px gray
+}
+
+.addImage {
+    border-radius: 50%;
+    width: 100px;
+    height: 100px;
+    margin: 50px;
+    transition: .2s
+}
+
+.addImage:hover {
+    box-shadow: 5px 5px 5px whitesmoke, -5px -5px 5px whitesmoke, 5px -5px 5px whitesmoke, -5px 5px 5px whitesmoke;
+    transform: scale(1.5);
+    transition: .2s
+}
+
+p {
+    font-size: 30px;
+    margin: 20px;
+}

@@ -12,12 +12,24 @@
 
 <h1>My Books</h1>
 
-<div class="addlistContainer">
-    <a href="/books/add">Add Book</a>
-</div>
+{{!-- <div class="addlistContainer">
+    <a href="/books/add">
+        <!-- image sourced from https://www.iconfinder.com/icons/372917/add_full_more_plus_round_icon -->
+        <img class="addImage" src="/images/add.png" alt="Add List Item Button">
+    </a>
+</div> --}}
 
 <div class="booksContainer">
     <ul class="listDisplay">
+        <div class="addListContainer">
+            <p>Add Book</p>
+            <div class="booksContainer">
+                <a href="/books/add">
+                <!-- image sourced from https://www.iconfinder.com/icons/372917/add_full_more_plus_round_icon -->
+                <img class="addImage" src="/images/add.png" alt="Add List Item Button">
+            </a>
+            </div>
+        </div>
         {{!-- this will create an li for EACH item --}}
         {{#each allBooks}}
         <div class="listContainer">
