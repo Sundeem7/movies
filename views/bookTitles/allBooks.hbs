@@ -10,7 +10,7 @@
     </ul>
 </div>
 
-<h1>My Books</h1>
+<h4>My Books</h4>
 
 <div class="mainContainer">
     <ul class="listDisplay">
@@ -37,9 +37,11 @@
                     </article>
                 </div>
             </div>
-            <div class="buttondiv">
-                    <a href="/books/{{_id}}" type="button" class="editButton">Edit</a>
+            <div class="buttonContainerForMe">
+                <div class="buttondiv">
+                    <a href="/books/{{_id}}" class="editButton">Edit</a>
                 </div>
+            </div>
         </div>
         {{/each}}
     </ul>

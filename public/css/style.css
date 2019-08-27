@@ -41,7 +41,7 @@ h1 {
 }
 
 h1:hover {
-    text-shadow: 1px 1px 5px white;
+    text-shadow: 1px 1px 5px black;
     transition: .2s;
 }
 
@@ -156,15 +156,13 @@ p {
     font-size: 30px;
     margin: 20px;
     text-align: center;
-    color: black;
+    color: white;
 }
 
 .editButton {
-    display: flex;
-    justify-content: center;
-    margin: 5px;
-    padding: 5px;
-    color: black;
+    /* margin: 10px 0; */
+    padding: 10px 30px;
+    color: white;
     background-color: gray;
     box-shadow: 0 5px white;
     border-radius: 5px;
@@ -178,10 +176,6 @@ p {
   background-color: rgb(61, 60, 60);
   box-shadow: 0 2px gray;
   transform: translateY(3px);
-}
-
-.buttondiv {
-    margin-top: -5px;
 }
 
 .formContainer {
@@ -233,18 +227,18 @@ label {
     align-items: center;
     margin: 5px;
     padding: 5px;
-    color: black;
+    color: white;
     background-color: gray;
     box-shadow: 0 5px white;
     border-radius: 5px;
     font-size: 20px;
 }
 
-.addBookButton:hover {
+.buttondiv:hover {
     background-color: rgb(61, 60, 60);
 }
 
-.addBookButton:active {
+.buttondiv:active {
   background-color: rgb(61, 60, 60);
   box-shadow: 0 2px gray;
   transform: translateY(3px);
@@ -257,5 +251,20 @@ form {
 }
 
 li {
-    max-height: 30px;
+    color: white;
+}
+
+h3 {
+    color: white;
+}
+
+.buttondiv {
+    width: 50px;
+}
+
+.buttonContainerForMe {
+    display: flex;
+    justify-content: flex-end;
+    margin-right: 65px;
+    margin-top: 20px;
 }
