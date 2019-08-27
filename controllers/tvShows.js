@@ -35,8 +35,8 @@ const tvShowsRouter = express.Router()
 // get all tvShows
 tvShowsRouter.get("/tvShows", function (req, res) {
   tvShowsApi.getAllTvShows()
-    .then((alltvShows) => {
-      res.render("/tvShowTitles/allTvShowTitles", {alltvShows})
+    .then((allTvShows) => {
+      res.render("tvShowTitles/allTvShowTitles", {allTvShows})
     })
     .catch((error) => {
       console.log(error) //will show error in console
@@ -69,7 +69,7 @@ tvShowsRouter.get("/tvShows/new", function (req, res) {
 
 // render createForm
 tvShowsRouter.get("/tvShows/add", function (req, res) {
-    res.render("/tvShowTitles/createTvShow", {
+    res.render("tvShowTitles/createTvShow", {
     })
 })
 
@@ -77,7 +77,7 @@ tvShowsRouter.get("/tvShows/add", function (req, res) {
 tvShowsRouter.get("/tvShows/:tvShowsId", function (req, res) {
   tvShowsApi.getOneTvShows(req.params.tvShowsId)
     .then((tvShowsFromDb) => {
-      res.render("/tvShowTitles/oneTvShow", {_id: req.params.tvShowsId, tvShowsFromDb})
+      res.render("tvShowTitles/oneTvShow", {_id: req.params.tvShowsId, tvShowsFromDb})
     })
     .catch((error) => {
       console.log(error) //will show error in console
