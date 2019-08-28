@@ -10,6 +10,16 @@ body {
     display: flex;
     justify-content: space-around;
     padding:20px 0;
+    background-color: black;
+    color: white;
+}
+
+.navBar {
+    border: white solid;
+}
+
+.navBarMenu:visited {
+    color: white;
 }
 
 .menu {
@@ -133,9 +143,9 @@ h1:visited {
     transition: .2s;
 }
 
-.addListContainer:hover {
-    box-shadow: 5px 5px 5px black, -5px -5px 5px black, 5px -5px 5px black, -5px 5px 5px black;
-    transform: scale(1.1);
+.addImage:hover {
+    box-shadow: 5px 5px 5px whitesmoke, -5px -5px 5px whitesmoke, 5px -5px 5px whitesmoke, -5px 5px 5px whitesmoke;
+    transform: scale(1.5);
     transition: .2s;
 }
 
@@ -143,7 +153,7 @@ h1:visited {
     border-radius: 50%;
     width: 100px;
     height: 100px;
-    margin: 50px;
+    margin: 50px 70px;
     transition: .2s;
 }
 
