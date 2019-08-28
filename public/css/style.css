@@ -3,7 +3,6 @@ body {
     width: 100vw;
     margin: 0;
     font-family: 'Roboto', sans-serif;
-    /* background-color: rgb(54, 54, 54); */
 }
 
 .topHeader {
@@ -43,17 +42,12 @@ a {
     color: inherit;
 }
 
-/* .booktitle {
-    margin: 
-} */
-
 .statsList {
     list-style-type: none;
     padding: 0 0 0 5px;
 }
 
 a:hover>div {
-    /* box-shadow: 5px 5px 5px whitesmoke, -5px -5px 5px whitesmoke, 5px -5px 5px whitesmoke, -5px 5px 5px whitesmoke; */
     transform: scale(1.5);
     transition: .2s
 }
@@ -66,7 +60,6 @@ a:hover>div {
 }
 
 .footer {
-    /* height: 50px; */
     margin-right: 57px;
     display: flex;
     justify-content: flex-end;
@@ -82,7 +75,6 @@ h1 {
 }
 
 h1:hover {
-    /* text-shadow: 1px 1px 5px black; */
     transition: .2s;
     background-color: black;
     border-radius: 50%;
@@ -145,11 +137,21 @@ h1:visited {
     flex-direction: column;
 }
 
-.listContainer {
+.listContainerB {
     border: solid black 1px;
     height: 400px;
     width: 250px;
     background-color: #8f0000;
+    border-radius: 5px;
+    margin: 20px 70px;
+    box-shadow: 5px 5px 10px gray;
+}
+
+.listContainerM {
+    border: solid black 1px;
+    height: 400px;
+    width: 250px;
+    background-color: #008f8f;
     border-radius: 5px;
     margin: 20px 70px;
     box-shadow: 5px 5px 10px gray;
@@ -169,17 +171,38 @@ h1:visited {
     z-index: 0;
 }
 
+.moviesContainer {
+    padding: 10px;
+    margin: 10px 15px;
+    position: absolute;
+    z-index: 0;
+}
+
 .listDisplay {
     display: flex;
     flex-wrap: wrap;
     justify-content: flex-start;
 }
 
-.addListContainer {
+.addListContainerB {
     border: solid black 1px;
     height: 400px;
     width: 250px;
     background-color: #8f0000;
+    border-radius: 5px;
+    margin: 20px 70px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    box-shadow: 5px 5px 10px gray;
+    transition: .2s;
+}
+
+.addListContainerM {
+    border: solid black 1px;
+    height: 400px;
+    width: 250px;
+    background-color: #008f8f;
     border-radius: 5px;
     margin: 20px 70px;
     display: flex;
@@ -198,6 +221,11 @@ h1:visited {
 }
 
 .addBooksContainer {
+    padding: 10px;
+    margin: 50px 0px;
+}
+
+.addMoviesContainer {
     padding: 10px;
     margin: 50px 0px;
 }
@@ -266,7 +294,7 @@ p {
     border: none;
 }
 
-.formContainer {
+.formContainerB {
     display: flex;
     flex-flow: column;
     height: 60vh;
@@ -278,6 +306,22 @@ p {
     margin: 0px auto;
     padding: 40px 20px;
     background-color: #8f0000;
+    border-radius: 5px;
+    box-shadow: 5px 5px 10px gray;
+}
+
+.formContainerM {
+    display: flex;
+    flex-flow: column;
+    height: 60vh;
+    width: 30vw;
+    font-size: 40px;
+    font-weight: 600;
+    text-align: center;
+    border: solid black;
+    margin: 0px auto;
+    padding: 40px 20px;
+    background-color: #008f8f;
     border-radius: 5px;
     box-shadow: 5px 5px 10px gray;
 }
@@ -300,15 +344,26 @@ label {
     font-size: 30px
 }
 
-.formH1 {
+.formH1B {
     margin: 20px 0;
-    font-size: 40px;
+    font-size: 30px;
 }
 
-.formH1:hover {
+.formH1B:hover {
     text-shadow: none;
     box-shadow: none;
     background-color: #8f0000;
+}
+
+.formH1M {
+    margin: 20px 0;
+    font-size: 30px;
+}
+
+.formH1M:hover {
+    text-shadow: none;
+    box-shadow: none;
+    background-color: #008f8f;
 }
 
 .addBookButton {

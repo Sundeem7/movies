@@ -1,29 +1,46 @@
 <div class="navBar">
     <ul class="topHeader">
         <li class="menu">
-            <a href="/books">Books</a></li>
+            <a class="navBarMenu" href="/books">Books</a></li>
         <li class="menu">
-            <a href="/movies">Movies</a></li>
+            <a class="navBarMenu" href="/movies">Movies</a></li>
         </li>
         <li class="menu">
-            <a href="/tvShows">TV Shows</a></li>
+            <a class="navBarMenu" href="/tvShows">TV Shows</a></li>
     </ul>
 </div>
 
-<h1>All Movie Titles</h1>
-
-<a href="/movies/add">New Movie Title</a>
-
-<ul>
-    {{!-- this will create an li for EACH item --}}
-    {{#each allMovies}}
-    <li>
-        {{!-- print out name of production company you are looking for  --}}
-        <a href="/movies/{{_id}}">{{nameOfMovie}}</a>  
-<ul>
-            <li>Number in Franchise: {{numberInFranchise}}</li>
-            <li>Release Date: {{releaseDate}}</li>
-        </ul> 
-    </li>
-    {{/each}}
-</ul>
+<div class="mainContainer">
+    <ul class="listDisplay">
+        <div class="addListContainerM">
+            <a href="/movies/add">
+                <p>Add A New Movie</p>
+                <div class="addMoviesContainer">
+                    <!-- image sourced from https://www.iconfinder.com/icons/372917/add_full_more_plus_round_icon -->
+                    <img class="addImage" src="/images/add.png" alt="Add List Item Button">
+                </div>
+            </a>
+        </div>
+        {{#each allMovies}}
+        <div class="listContainerM">
+            <div class="moviesContainer">
+                <img class="imageCard" src="/images/movies.png" alt="Movie Image">
+                <div class="allInfo">
+                    <h3 class="movieTitle">{{nameOfMovie}}</h3>
+                    <article class="stats">
+                        <ul class="statsList">
+                            <li>Director: {{director}}</li>
+                            <li>Review: {{movieReview}}</li>
+                        </ul>
+                    </article>
+                </div>
+            </div>
+            <div class="buttonContainerForMe">
+                <div class="buttondiv">
+                    <a href="/movies/{{_id}}" class="button">EDIT</a>
+                </div>
+            </div>
+        </div>
+        {{/each}}
+    </ul>
+</div>

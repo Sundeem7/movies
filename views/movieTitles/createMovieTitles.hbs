@@ -10,20 +10,21 @@
     </ul>
 </div>
 
-<form method="POST" action="/movies">
-<h1>Enter A Franchise</h1>
+<div class="formContainerM">
+    <h1 class="formH1M">Enter a New Movie</h1>
+    <label for="nameOfMovie">Movie Title</label>
 
-<!-- Template for creating input form for a string object key called stringMember-->
-    <label for="nameOfMovie">Movie Name</label>
-    <input type="text" name="nameOfMovie" required/>
+    <form method="POST" action="/movies">
+        <input class="formInput" type="text" name="nameOfMovie" maxlength="20" placeholder="(Max 20 Characters)"
+            required />
 
-    <label for="numberInFranchise">Number in Movie Franchise</label>
-    <input type="number"  name="numberInFranchise" required/>
+        <label for="director">Director</label>
+        <input type="text" name="director" maxlength="20" placeholder="(Max 20 Characters)" />
 
-    <label for="releaseDate">Release Date</label>
-    <input type="date"  name="releaseDate" required/>
+        <label for="movieReview">Movie Review</label>
+        <textarea rows="4" cols="50" name="movieReview" type="text" maxlength="20"
+            placeholder="(Max 20 Characters)"></textarea>
 
-    <input type="submit" value="Add Movie"/>
-</form>
-
-
+        <input type="submit" class="formButton" value="ADD" />
+    </form>
+</div>

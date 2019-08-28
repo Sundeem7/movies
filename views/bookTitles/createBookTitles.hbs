@@ -10,18 +10,19 @@
     </ul>
 </div>
 
-<div class="formContainer">
-    <h1 class="nameOfBook formH1">Enter a New Book</h1>
+<div class="formContainerB">
+    <h1 class="formH1B">Enter a New Book</h1>
     <label for="name">Book Title</label>
 
     <form method="POST" action="/books">
         <input class="formInput" type="text" name="name" maxlength="20" placeholder="(Max 20 Characters)" required />
 
         <label for="author">Author</label>
-        <input type="text" name="author" maxlength="20" placeholder="(Max 20 Characters)"/>
+        <input type="text" name="author" maxlength="20" placeholder="(Max 20 Characters)" />
 
         <label for="review">Review</label>
-        <textarea rows="4" cols="50" name="review" type="text" maxlength="20" placeholder="(Max 20 Characters)"></textarea>
+        <textarea rows="4" cols="50" name="review" type="text" maxlength="20"
+            placeholder="(Max 20 Characters)"></textarea>
 
         <input type="submit" class="formButton" value="ADD" />
     </form>

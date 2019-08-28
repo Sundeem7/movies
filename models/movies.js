@@ -28,8 +28,8 @@ const mongoose = require('./connection.js')
  */
 const movieSchema = mongoose.Schema({
   nameOfMovie: String,
-  numberInFranchise: Number,
-  releaseDate: Date
+  director: String,
+  movieReview: String
 })
 
 /* Step 3
