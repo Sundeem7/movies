@@ -223,6 +223,28 @@ p {
   transform: translateY(3px);
 }
 
+.formButton {
+    /* margin: 10px 0; */
+    padding: 5px 30px 30px 30px;
+    color: white;
+    background-color: gray;
+    box-shadow: 0 5px white;
+    border-radius: 5px;
+    width: 35%;
+    margin-top: 20px;
+    font-size: 16pt;
+}
+
+.formButton:hover {
+    background-color: rgb(61, 60, 60);
+}
+
+.formButton:active {
+  background-color: rgb(61, 60, 60);
+  box-shadow: 0 2px gray;
+  transform: translateY(3px);
+}
+
 .formContainer {
     display: flex;
     flex-flow: column;
@@ -264,6 +286,8 @@ label {
 
 .formH1:hover {
     text-shadow: none;
+    box-shadow: none;
+    background-color: #8f0000;
 }
 
 .addBookButton {
