@@ -15,7 +15,7 @@ body {
 }
 
 .navBar {
-    border: white solid;
+    margin: 0;
 }
 
 .navBarMenu:visited {
@@ -30,8 +30,8 @@ body {
 }
 
 .menu:hover {
-    text-shadow: 3px 3px 10px rgb(255, 167, 4);
-    transform: scale(1.1);
+    text-shadow: 4px 4px 10px rgb(255, 167, 4), -4px 4px 10px rgb(255, 167, 4), 4px -4px 10px rgb(255, 167, 4), -4px -4px 10px rgb(255, 167, 4);
+    transform: scale(1.2);
 }
 
 .menu:visited {
@@ -74,7 +74,7 @@ a:hover>div {
 
 h1 {
     font-family: 'Dancing Script', cursive;
-    margin-left: 57px;
+    margin: 0 0 0 57px;
     font-size: 60px;
     color: rgb(214, 140, 3);
     padding: 10px;
