@@ -23,7 +23,7 @@
         <input type="text" name="author" value="{{booksFromDb.author}}" required/>
 
         <label for="review">Review</label>
-        <textarea rows="4" cols="50" name="review" type="text" value="{{booksFromDb.review}}" maxlength="30" placeholder="{{booksFromDb.review}}"></textarea>
+        <textarea rows="4" cols="50" name="review" type="text" maxlength="30" >{{booksFromDb.review}}</textarea>
 
         <input type="submit" class="formButton" value="Edit" required/>
     </form>
