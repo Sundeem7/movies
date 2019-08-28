@@ -2,8 +2,9 @@
 General Assembly SEI August 28 - Project 2
 
 
-- Project: https://github.com/Sundeem7/movies.git
+- Project GitHub: https://github.com/Sundeem7/movies.git
 - Project Board: https://github.com/Sundeem7/movies/projects/1
+- Project Heroku: https://obscure-fjord-55710.herokuapp.com/
 
 ## Overview
 The goal of this project was to use the MEHN Template, Mongoose, and Handlebars to render ERD in the browser. I chose to create a library of my favorite tv shows, movies and books. Each category has a one to many relationship.
