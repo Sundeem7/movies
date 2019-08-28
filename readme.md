@@ -20,8 +20,10 @@ The goal of this project was to use the MEHN Template, Mongoose, and Handlebars 
 
 
 ## Wireframe
-!["A Wireframe of MEHN"](https://github.com/Sundeem7/jeopardy/blob/master/wireFrames/Category.png)
-!["A Wireframe of MEHN"](https://github.com/Sundeem7/jeopardy/blob/master/wireFrames/onClick%20Q%26A.png)
+!["A Wireframe of Adding Item"](https://github.com/Sundeem7/movies/blob/master/wireFrames/addLibraryItem.png)
+!["A Wireframe of All Items"](https://github.com/Sundeem7/movies/blob/master/wireFrames/allLibraryItems.png)
+!["A Wireframe of Editing Items"](https://github.com/Sundeem7/movies/blob/master/wireFrames/editLibraryItem.png)
+!["A Wireframe of All Items"](https://github.com/Sundeem7/movies/blob/master/wireFrames/homePage.png)
 
 
 ## Technologies Used
