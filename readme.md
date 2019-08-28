@@ -26,7 +26,7 @@ The goal of this project was to use the MEHN Template, Mongoose, and Handlebars 
 !["A Wireframe of All Items"](https://github.com/Sundeem7/movies/blob/master/wireFrames/homePage.png)
 
 ## ERD
-!["ONE: MANY"](https://github.com/Sundeem7/movies/blob/master/wireFrames/addLibraryItem.png)
+!["ONE: MANY"](https://github.com/Sundeem7/movies/blob/master/wireFrames/oneToMany.png)
 
 ## Technologies Used
 - Languages --> HTML, CSS, JavaScript
