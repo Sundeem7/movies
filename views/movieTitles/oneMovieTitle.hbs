@@ -17,10 +17,10 @@
         <form action="/movies/{{moviesFromDb._id}}?_method=PUT" method="POST">
 
             <label for="nameOfMovie">Movie Title</label>
-            <input type="text" name="nameOfMovie" value="{{moviesFromDb.nameOfMovie}}" required />
+            <input type="text" name="nameOfMovie" value="{{moviesFromDb.nameOfMovie}}" maxlength="20" required />
 
             <label for="director">Director</label>
-            <input type="text" name="director" value="{{moviesFromDb.director}}" placeholder="(Max 20 Characters)" />
+            <input type="text" name="director" value="{{moviesFromDb.director}}" placeholder="(Max 20 Characters)" maxlength="20"/>
 
             <label for="movieReview">Review</label>
             <textarea rows="4" cols="50" name="movieReview" type="text" maxlength="20"

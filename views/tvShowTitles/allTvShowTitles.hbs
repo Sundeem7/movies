@@ -1,4 +1,4 @@
-{{!-- <div class="navBar">
+<div class="navBar">
     <ul class="topHeader">
         <li class="menu">
             <a class="navBarMenu" href="/books">Books</a></li>
@@ -26,56 +26,21 @@
             <div class="tvShowsContainer">
                 <img class="imageCard" src="/images/tv.png" alt="TV Image">
                 <div class="allInfo">
-                    <h3 class="tvTitle">{{name}}</h3>
+                    <h3 class="tvTitle">{{nameOfTvShow}}</h3>
                     <article class="stats">
                         <ul class="statsList">
-                            <li>Author: {{author}}</li>
-                            <li>Review: {{review}}</li>
+                            <li>Author: {{network}}</li>
+                            <li>Review: {{tvShowReview}}</li>
                         </ul>
                     </article>
                 </div>
             </div>
             <div class="buttonContainerForMe">
                 <div class="buttondiv">
-                    <a href="/books/{{_id}}" class="button">EDIT</a>
+                    <a href="/tvShows/{{_id}}" class="button">EDIT</a>
                 </div>
             </div>
         </div>
         {{/each}}
     </ul>
-</div> --}}
-
-
-
-
-
-<div class="navBar">
-    <ul class="topHeader">
-        <li class="menu">
-            <a href="/books">Books</a></li>
-        <li class="menu">
-            <a href="/movies">Movies</a></li>
-        </li>
-        <li class="menu">
-            <a href="/tvShows">TV Shows</a></li>
-    </ul>
 </div>
-
-<h1>All Movie Franchises</h1>
-
-<a href="/tvShows/add/">New Movie Franchise</a>
-
-<ul>
-    {{!-- this will create an li for EACH item --}}
-    {{#each allTvShows}}
-    <li>
-        {{!-- print out name of production company you are looking for  --}}
-        <a href="/tvShows/{{_id}}">{{franchiseName}}</a>
-        <ul>
-            <li>Number of Movies in Franchise: {{numberOfMovies}}</li>
-            <li>Box Office: ${{totalBudget}}.00</li>
-            <li>Budget: ${{totalRevenue}}.00</li>
-        </ul>
-    </li>
-    {{/each}}
-</ul>

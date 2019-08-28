@@ -10,22 +10,20 @@
     </ul>
 </div>
 
-<form method="POST" action="/tvShows">
-<h1>Enter A Franchise</h1>
+<div class="formContainerT">
+    <h1 class="formH1T">Enter a New Book</h1>
+    <label for="nameOfTvShow">TV Show Title</label>
 
-<!-- Template for creating input form for a string object key called stringMember-->
-    <label for="franchiseName">Franchise Name</label>
-    <input type="text" name="franchiseName" required/>
+    <form method="POST" action="/tvShows">
+        <input class="formInput" type="text" name="nameOfTvShow" maxlength="20" placeholder="(Max 20 Characters)" required />
 
-    <label for="numberOfMovies">Number of Movies in Franchise</label>
-    <input type="number"  name="numberOfMovies" required/>
+        <label for="network">Network</label>
+        <input type="text" name="network" maxlength="20" placeholder="(Max 20 Characters)" />
 
-    <label for="totalRevenue">Total Revenue</label>
-    <input type="number"  name="totalRevenue" required/>
+        <label for="tvShowReview">tvShowReview</label>
+        <textarea rows="4" cols="50" name="tvShowReview" type="text" maxlength="20"
+            placeholder="(Max 20 Characters)"></textarea>
 
-    <label for="totalBudget">Total Budget</label>
-    <input type="number"  name="totalBudget" required/>
-
-    <input type="submit" value="Add Franchise"/>
-</form>
-
+        <input type="submit" class="formButton" value="ADD" />
+    </form>
+</div>

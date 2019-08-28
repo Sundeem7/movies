@@ -28,14 +28,9 @@ const mongoose = require('./connection.js')
  */
 
 const tvShowsSchema = mongoose.Schema({
-  franchiseName: String,
-  numberOfMovies: Number,
-  totalRevenue: Number,
-  totalBudget: Number,
-  // movies: [{
-  //     type: Schema.Types.ObjectId, //calls the specific object type
-  //     ref: "movie" //referencing file movies
-  //  }]
+  nameOfTvShow: String,
+  network: String,
+  tvShowReview: String
 })
 
 /* Step 3

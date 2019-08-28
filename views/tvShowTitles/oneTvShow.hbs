@@ -10,25 +10,27 @@
     </ul>
 </div>
 
-<div>
-    <form action="/tvShows/{{tvShowsFromDb._id}}?_method=DELETE" method="POST">
-    <input type="submit" value="Delete Issue"/>
-    </form>
-    <form action="/tvShows/{{tvShowsFromDb._id}}?_method=PUT" method="POST">
-    
-    <input type="submit" value="Edit Franchise" />
+<div class="formContainerT">
+    <h1 class="nameOfBook formH1B">Edit Book Information</h1>
+    <div>
 
-    <label for="franchiseName">Franchise Name</label>
-    <input type="text" name="franchiseName" value="{{tvShowsFromDb.franchiseName}}" required/>
+        <form action="/tvShows/{{tvShowsFromDb._id}}?_method=PUT" method="POST">
 
-    <label for="numberOfMovies">Number of Movies in Franchise</label>
-    <input type="number"  name="numberOfMovies" value="{{tvShowsFromDb.numberOfMovies}}" required/>
+            <label for="nameOfTvShow">Book Title</label>
+            <input type="text" name="nameOfTvShow" value="{{tvShowsFromDb.nameOfTvShow}}" maxlength="20" required />
 
-    <label for="totalRevenue">Total Revenue</label>
-    <input type="number"  name="totalRevenue" value="{{tvShowsFromDb.totalRevenue}}" required/>
+            <label for="network">Network</label>
+            <input type="text" name="network" value="{{tvShowsFromDb.network}}" placeholder="(Max 20 Characters)" maxlength="20"/>
 
-    <label for="totalBudget">Total Budget</label>
-    <input type="number"  name="totalBudget" value="{{tvShowsFromDb.totalBudget}}" required/>
+            <label for="tvShowReview">Review</label>
+            <textarea rows="4" cols="50" name="tvShowReview" type="text" maxlength="20"
+                placeholder="(Max 20 Characters)">{{tvShowsFromDb.tvShowReview}}</textarea>
 
-    </form>
+            <input type="submit" class="otherEditButton" value="EDIT" />
+        </form>
+
+        <form action="/tvShows/{{tvShowsFromDb._id}}?_method=DELETE" method="POST">
+            <input type="submit" class="deleteButton" value="DELETE" />
+        </form>
+    </div>
 </div>

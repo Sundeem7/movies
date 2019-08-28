@@ -157,6 +157,16 @@ h1:visited {
     box-shadow: 5px 5px 10px gray;
 }
 
+.listContainerT {
+    border: solid black 1px;
+    height: 400px;
+    width: 250px;
+    background-color: #dbbb03;
+    border-radius: 5px;
+    margin: 20px 70px;
+    box-shadow: 5px 5px 10px gray;
+}
+
 .imageCard {
     border-radius: 50%;
     width: 200px;
@@ -172,6 +182,13 @@ h1:visited {
 }
 
 .moviesContainer {
+    padding: 10px;
+    margin: 10px 15px;
+    position: absolute;
+    z-index: 0;
+}
+
+.tvShowsContainer {
     padding: 10px;
     margin: 10px 15px;
     position: absolute;
@@ -212,6 +229,20 @@ h1:visited {
     transition: .2s;
 }
 
+.addListContainerT {
+    border: solid black 1px;
+    height: 400px;
+    width: 250px;
+    background-color: #dbbb03;
+    border-radius: 5px;
+    margin: 20px 70px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    box-shadow: 5px 5px 10px gray;
+    transition: .2s;
+}
+
 .addImage {
     border-radius: 50%;
     width: 100px;
@@ -226,6 +257,11 @@ h1:visited {
 }
 
 .addMoviesContainer {
+    padding: 10px;
+    margin: 50px 0px;
+}
+
+.addTvShowsContainer {
     padding: 10px;
     margin: 50px 0px;
 }
@@ -326,6 +362,22 @@ p {
     box-shadow: 5px 5px 10px gray;
 }
 
+.formContainerT {
+    display: flex;
+    flex-flow: column;
+    height: 60vh;
+    width: 30vw;
+    font-size: 40px;
+    font-weight: 600;
+    text-align: center;
+    border: solid black;
+    margin: 0px auto;
+    padding: 40px 20px;
+    background-color: #dbbb03;
+    border-radius: 5px;
+    box-shadow: 5px 5px 10px gray;
+}
+
 input {
     height: 30px;
     font-size: 25px;
@@ -347,6 +399,7 @@ label {
 .formH1B {
     margin: 20px 0;
     font-size: 30px;
+    color: white;
 }
 
 .formH1B:hover {
@@ -358,12 +411,25 @@ label {
 .formH1M {
     margin: 20px 0;
     font-size: 30px;
+     color: black;
 }
 
 .formH1M:hover {
     text-shadow: none;
     box-shadow: none;
     background-color: #008f8f;
+}
+
+.formH1T {
+    margin: 20px 0;
+    font-size: 30px;
+    color: black;
+}
+
+.formH1T:hover {
+    text-shadow: none;
+    box-shadow: none;
+    background-color: #dbbb03;
 }
 
 .addBookButton {
