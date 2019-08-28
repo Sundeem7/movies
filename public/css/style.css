@@ -43,6 +43,15 @@ a {
     color: inherit;
 }
 
+/* .booktitle {
+    margin: 
+} */
+
+.statsList {
+    list-style-type: none;
+    padding: 0 0 0 5px;
+}
+
 a:hover>div {
     /* box-shadow: 5px 5px 5px whitesmoke, -5px -5px 5px whitesmoke, 5px -5px 5px whitesmoke, -5px 5px 5px whitesmoke; */
     transform: scale(1.5);
@@ -156,6 +165,8 @@ h1:visited {
 .booksContainer {
     padding: 10px;
     margin: 10px 15px;
+    position: absolute;
+    z-index: 0;
 }
 
 .listDisplay {
@@ -178,12 +189,6 @@ h1:visited {
     transition: .2s;
 }
 
-/* .addImage:hover {
-    box-shadow: 5px 5px 5px whitesmoke, -5px -5px 5px whitesmoke, 5px -5px 5px whitesmoke, -5px 5px 5px whitesmoke;
-    transform: scale(1.5);
-    transition: .2s;
-} */
-
 .addImage {
     border-radius: 50%;
     width: 100px;
@@ -205,44 +210,60 @@ p {
 }
 
 .button {
-    /* margin: 10px 0; */
     padding: 10px 30px;
-    color: white;
-    background-color: gray;
-    box-shadow: 0 5px white;
+    color: black;
+    background-color: white;
     border-radius: 5px;
+    margin-top: 325px;
+    position: absolute;
+    z-index: 10000000;
+    transition: .2s;
 }
 
 .button:hover {
+    color: whitesmoke;
     background-color: rgb(61, 60, 60);
-}
-
-.button:active {
-  background-color: rgb(61, 60, 60);
-  box-shadow: 0 2px gray;
-  transform: translateY(3px);
+    transition: .2s;
 }
 
 .formButton {
-    /* margin: 10px 0; */
     padding: 5px 30px 30px 30px;
-    color: white;
-    background-color: gray;
-    box-shadow: 0 5px white;
+    color: black;
+    background-color: white;
     border-radius: 5px;
     width: 35%;
     margin-top: 20px;
     font-size: 16pt;
+    transition: .2s;
 }
 
 .formButton:hover {
+    color: whitesmoke;
     background-color: rgb(61, 60, 60);
+    transition: .2s;
 }
 
-.formButton:active {
-  background-color: rgb(61, 60, 60);
-  box-shadow: 0 2px gray;
-  transform: translateY(3px);
+.otherEditButton {
+    padding: 5px 30px 30px 30px;
+    color: black;
+    background-color: white;
+    border-radius: 5px;
+    width: 35%;
+    margin-top: 20px;
+    font-size: 16pt;
+    transition: .2s;
+}
+
+.deleteButton {
+    padding: 5px 30px 30px 30px;
+    color: whitesmoke;
+    background-color: rgb(61, 60, 60);;
+    border-radius: 5px;
+    width: 35%;
+    margin-top: 20px;
+    font-size: 16pt;
+    transition: .2s;
+    border: none;
 }
 
 .formContainer {
@@ -325,6 +346,7 @@ li {
 
 h3 {
     color: white;
+    margin-bottom: 10px;
 }
 
 .buttondiv {

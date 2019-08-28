@@ -15,14 +15,14 @@
     <label for="name">Book Title</label>
 
     <form method="POST" action="/books">
-        <input class="formInput" type="text" name="name" required />
+        <input class="formInput" type="text" name="name" maxlength="20" placeholder="(Max 20 Characters)" required />
 
         <label for="author">Author</label>
-        <input type="text" name="author" required />
+        <input type="text" name="author" maxlength="20" placeholder="(Max 20 Characters)"/>
 
         <label for="review">Review</label>
-        <textarea rows="4" cols="50" name="review" type="text" maxlength="20" placeholder="Enter review here..."></textarea>
+        <textarea rows="4" cols="50" name="review" type="text" maxlength="20" placeholder="(Max 20 Characters)"></textarea>
 
-        <input type="submit" class="formButton" value="Add" />
+        <input type="submit" class="formButton" value="ADD" />
     </form>
 </div>
