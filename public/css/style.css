@@ -29,11 +29,18 @@ body {
 a {
     text-decoration: none;
 }
+
+a:hover>div {
+    /* box-shadow: 5px 5px 5px whitesmoke, -5px -5px 5px whitesmoke, 5px -5px 5px whitesmoke, -5px 5px 5px whitesmoke; */
+    transform: scale(1.5);
+    transition: .2s
+}
+
 .header {
     height: 60px;
     display: flex;
     align-items: center;
-    margin: 10px 0;
+    margin: 20px 57px 20px 0;
 }
 
 .footer {
@@ -44,19 +51,23 @@ a {
 }
 
 h1 {
+    font-family: 'Dancing Script', cursive;
     margin-left: 57px;
-    font-size: 40px;
-    color: black;
+    font-size: 60px;
+    color: rgb(214, 140, 3);
+    padding: 10px;
     transition: .2s;
 }
 
 h1:hover {
-    text-shadow: 1px 1px 5px black;
+    /* text-shadow: 1px 1px 5px black; */
     transition: .2s;
+    background-color: black;
+    border-radius: 50%;
 }
 
 h1:visited {
-    color: black;
+    color: rgb(214, 140, 3);
 }
 .imageContainer {
     display: flex;
@@ -69,6 +80,7 @@ h1:visited {
     width: 200px;
     height: 200px;
     transition: .2s;
+    margin-top: -800px;
 }
 
 .hpImage:hover {
@@ -92,6 +104,11 @@ h1:visited {
     box-shadow: 5px 5px 10px gray;
 }
 
+.hpTitle {
+    font-size: 40px;
+    text-align: left;
+}
+
 .column {
     width: 30%;
     height: 100%;
@@ -99,6 +116,7 @@ h1:visited {
     justify-content: space-around;
     align-items: center;
     border-radius: 5px;
+    flex-direction: column;
 }
 
 .listContainer {
