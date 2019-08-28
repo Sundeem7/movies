@@ -480,3 +480,11 @@ h3 {
     margin-right: 65px;
     margin-top: 20px;
 }
+
+.uxFont {
+    color: black;
+}
+
+.otherUXFont {
+    color: white;
+}

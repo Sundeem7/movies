@@ -16,13 +16,13 @@
 
         <form action="/books/{{booksFromDb._id}}?_method=PUT" method="POST">
 
-            <label for="name">Book Title</label>
+            <label class="otherUXFont" for="name">Book Title</label>
             <input type="text" name="name" value="{{booksFromDb.name}}" maxlength="20" required />
 
-            <label for="author">Author</label>
+            <label class="otherUXFont" for="author">Author</label>
             <input type="text" name="author" value="{{booksFromDb.author}}" placeholder="(Max 20 Characters)" maxlength="20"/>
 
-            <label for="review">Review</label>
+            <label class="otherUXFont" for="review">Review</label>
             <textarea rows="4" cols="50" name="review" type="text" maxlength="20"
                 placeholder="(Max 20 Characters)">{{booksFromDb.review}}</textarea>
 

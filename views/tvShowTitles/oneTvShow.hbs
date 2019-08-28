@@ -11,12 +11,12 @@
 </div>
 
 <div class="formContainerT">
-    <h1 class="nameOfBook formH1B">Edit Book Information</h1>
+    <h1 class="nameOfBook formH1T">Edit TV Show Information</h1>
     <div>
 
         <form action="/tvShows/{{tvShowsFromDb._id}}?_method=PUT" method="POST">
 
-            <label for="nameOfTvShow">Book Title</label>
+            <label for="nameOfTvShow">TV Show Title</label>
             <input type="text" name="nameOfTvShow" value="{{tvShowsFromDb.nameOfTvShow}}" maxlength="20" required />
 
             <label for="network">Network</label>
