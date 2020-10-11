@@ -1,5 +1,3 @@
-/// <reference types="cypress" />
-
 describe('Testing All Routes', () => {
     it('testing home route', () => {
         cy.visit('/')
