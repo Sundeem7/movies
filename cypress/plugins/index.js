@@ -1,4 +1,5 @@
-/// <reference types="cypress" />
+// / <reference types="cypress" />
+const moviesApi =require('../../models/movies') 
 // ***********************************************************
 // This example plugins/index.js can be used to load plugins
 //
@@ -16,6 +17,12 @@
  * @type {Cypress.PluginConfig}
  */
 module.exports = (on, config) => {
+  on('task', {
+    checkMovie () {
+      console.log(moviesApi.getAllMovie())
+      return moviesApi.getAllMovie()
+    }
+  })
   // `on` is used to hook into various events Cypress emits
   // `config` is the resolved Cypress config
 }

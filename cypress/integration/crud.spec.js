@@ -46,11 +46,11 @@ describe('books, movies, and tvShows CRUD', () => {
             .click()
 	});
 
-    it('testing movies', () => {
+    it.only('testing movies', () => {
 		cy.visit('/');
         // navigate to '/books'
-		cy.get('.column2')
-            .find('img')
+		cy.get('[data-cy="moviesColumn"]')
+            // .find('img')
 		    .click();
         // add book
         cy.get('.addMoviesContainer')
@@ -66,32 +66,33 @@ describe('books, movies, and tvShows CRUD', () => {
             .type('Better than the book')
             .parent()
             .submit()
-        // edit book
-        cy.get('.buttondiv')
-            .find('a')
-            .click()
-        // clear inputs and edit book
-        cy.get('form')
-            .find('[name="nameOfMovie"]')
-            .clear()
-            .type('Harry Potter')
-            .siblings('[name="director"]')
-            .clear()
-            .type('too many to name')
-            .siblings('[name="movieReview"]')
-            .clear()
-            .type('Books were better')
-            .siblings('.otherEditButton')
-            .click()
-        // edit book to delete
-        cy.get('.buttondiv')
-            .find('a')
-            .click()
-        // delete book
-        cy.get('.deleteButton')
-            .click()
+        cy.task('checkMovie', 'cypress.json')
+    //     // edit book
+    //     cy.get('.buttondiv')
+    //         .find('a')
+    //         .click()
+    //     // clear inputs and edit book
+    //     cy.get('form')
+    //         .find('[name="nameOfMovie"]')
+    //         .clear()
+    //         .type('Harry Potter')
+    //         .siblings('[name="director"]')
+    //         .clear()
+    //         .type('too many to name')
+    //         .siblings('[name="movieReview"]')
+    //         .clear()
+    //         .type('Books were better')
+    //         .siblings('.otherEditButton')
+    //         .click()
+    //     // edit book to delete
+    //     cy.get('.buttondiv')
+    //         .find('a')
+    //         .click()
+    //     // delete book
+    //     cy.get('.deleteButton')
+    //         .click()
     });
-    it.only('testing tvShows', () => {
+    it('testing tvShows', () => {
 		cy.visit('/');
         // navigate to '/books'
 		cy.get('.column3')
