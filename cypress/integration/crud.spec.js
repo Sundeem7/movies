@@ -57,7 +57,7 @@ describe('books, movies, and tvShows CRUD', () => {
             .find('img')
             .click()
         // delete all previous movies
-        // cy.task('deleteMovies', 'cypress.json')
+        cy.task('deleteMovies', 'cypress.json')
         // fill inputs
         cy.get('form')
             .find('[name="nameOfMovie"]')
