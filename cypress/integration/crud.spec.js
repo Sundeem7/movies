@@ -56,6 +56,8 @@ describe('books, movies, and tvShows CRUD', () => {
         cy.get('.addMoviesContainer')
             .find('img')
             .click()
+        // delete all previous movies
+        // cy.task('deleteMovies', 'cypress.json')
         // fill inputs
         cy.get('form')
             .find('[name="nameOfMovie"]')
@@ -67,30 +69,30 @@ describe('books, movies, and tvShows CRUD', () => {
             .parent()
             .submit()
         cy.task('checkMovie', 'cypress.json')
-    //     // edit book
-    //     cy.get('.buttondiv')
-    //         .find('a')
-    //         .click()
-    //     // clear inputs and edit book
-    //     cy.get('form')
-    //         .find('[name="nameOfMovie"]')
-    //         .clear()
-    //         .type('Harry Potter')
-    //         .siblings('[name="director"]')
-    //         .clear()
-    //         .type('too many to name')
-    //         .siblings('[name="movieReview"]')
-    //         .clear()
-    //         .type('Books were better')
-    //         .siblings('.otherEditButton')
-    //         .click()
-    //     // edit book to delete
-    //     cy.get('.buttondiv')
-    //         .find('a')
-    //         .click()
-    //     // delete book
-    //     cy.get('.deleteButton')
-    //         .click()
+        // edit book
+        cy.get('.buttondiv')
+            .find('a')
+            .click()
+        // clear inputs and edit book
+        cy.get('form')
+            .find('[name="nameOfMovie"]')
+            .clear()
+            .type('Harry Potter')
+            .siblings('[name="director"]')
+            .clear()
+            .type('too many to name')
+            .siblings('[name="movieReview"]')
+            .clear()
+            .type('Books were better')
+            .siblings('.otherEditButton')
+            .click()
+        // edit book to delete
+        cy.get('.buttondiv')
+            .find('a')
+            .click()
+        // delete book
+        cy.get('.deleteButton')
+            .click()
     });
     it('testing tvShows', () => {
 		cy.visit('/');
