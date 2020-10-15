@@ -9,7 +9,7 @@
  * NOTE: skip this if you are not using mongoose
  *
  */
-const mongoose = require('./connection.js')
+const mongoose = require('./connection.js');
 
 /* Step 1 alternative
  *
@@ -27,10 +27,10 @@ const mongoose = require('./connection.js')
  *
  */
 const movieSchema = mongoose.Schema({
-  nameOfMovie: String,
-  director: String,
-  movieReview: String
-})
+	nameOfMovie: String,
+	director: String,
+	movieReview: String
+});
 
 /* Step 3
  *
@@ -38,7 +38,7 @@ const movieSchema = mongoose.Schema({
  * NOTE: skip this if you are not using mongoose
  *
  */
-const moviesCollection = mongoose.model('movie', movieSchema)
+const moviesCollection = mongoose.model('movie', movieSchema);
 
 /* Step 4
  *
@@ -47,27 +47,31 @@ const moviesCollection = mongoose.model('movie', movieSchema)
  */
 // READ/ get
 const getAllMovie = () => {
-  return moviesCollection.find();
-}
+	return moviesCollection.find();
+};
 
 const getOneMovie = (moviesId) => {
-  return moviesCollection.findById(moviesId)
-}
+	return moviesCollection.findById(moviesId);
+};
 
 // CREATE/ post
 const addMovie = (newMovie) => {
-  return moviesCollection.create(newMovie)
-}
+	return moviesCollection.create(newMovie);
+};
 
 // UPDATE/ edit
 const updateMovie = (moviesId, updatedMovie) => {
-  return moviesCollection.updateOne({_id: moviesId}, updatedMovie)
-}
+	return moviesCollection.updateOne({ _id: moviesId }, updatedMovie);
+};
 
 // DELETE
 const deleteMovie = (moviesId) => {
-  return moviesCollection.findByIdAndDelete(moviesId)
-}
+	return moviesCollection.findByIdAndDelete(moviesId);
+};
+
+const deleteAllMovies = () => {
+	return moviesCollection.deleteMany();
+};
 
 /* Step 5
  *
@@ -75,9 +79,10 @@ const deleteMovie = (moviesId) => {
  * object
  */
 module.exports = {
-  addMovie,
+	addMovie,
   deleteMovie,
-  getAllMovie,
-  getOneMovie,
-  updateMovie
-}
+  deleteAllMovies,
+	getAllMovie,
+	getOneMovie,
+	updateMovie
+};
