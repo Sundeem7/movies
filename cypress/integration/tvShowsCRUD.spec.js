@@ -5,7 +5,7 @@ describe('tvShows CRUD', () => {
 		cy.visit('/');
         // navigate to '/tvShows'
 		cy.get('.column3')
-            .find('img')
+            // .find('img')
 		    .click();
         // add tvShow
         cy.get('.addTvShowsContainer')
